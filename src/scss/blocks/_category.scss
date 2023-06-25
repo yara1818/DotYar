@@ -1,0 +1,127 @@
+.section__category {
+    padding-top: 25px;
+    color: #fff;
+    // background: $background;
+    .container {
+        width: 100%;
+        .category__main {
+            padding-bottom: 25px;
+            .carts {
+                margin-top: 50px;
+                display: flex;
+                .hero {
+                    display: block;
+                }
+                .item {
+                    display: block;
+                }
+                .skill {
+                    display: block;
+                }
+                .crip {
+                    display: block;
+                }
+                .none {
+                    display: none;
+                }
+                .cart {
+                    margin-right: 50px;
+                    width: 250px;
+                    height: 175px;
+                    border: #fff 1px solid;
+                    .cart__header {
+                        height: 45%;
+                        background: red;
+                        position: relative;
+                        border-bottom: 1px solid #fff;
+                        .title {
+                            position: absolute;
+                            font-size: 25px;
+                            bottom: 8%;
+                            left: 4%;
+                            background-color: #000;
+                        }
+                    }
+                    .cart__header-hero {
+                        background: $cart__header-hero;
+                    }
+                    .cart__header-crip {
+                        background: $cart__header-crip;
+                    }
+                    .cart__header-item {
+                        background: $cart__header-item;
+                    }
+                    .cart__header-skill {
+                        background: $cart__header-skill;
+                    }
+                    .cart__main {
+                        position: relative;
+                        background: $cart__header;
+                        height: 55%;
+                        .subtitle {
+                            font-size: 18px;
+                            text-align: center;
+                            padding-top: 10px;
+                        }
+                        .button {
+                            margin-top: 10px;
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            font-size: 20px;
+                            width: 75%;
+                            color: #fff;
+                            height: 40%;
+                            border-radius: 25px;
+                            cursor: pointer;
+                            border: #fff 1px solid;
+                            background: $cart__button;
+                        }
+                    }
+                }
+            }
+        }
+        .nav {
+            width: 90%;
+            display: flex;
+            margin: 0 auto;
+            .description {
+                font-size: 22px;
+            }
+            .dropdown__button {
+                margin-left: 3%;
+                width: 10%;
+                position: relative;
+                .button {
+                    height: 100%;
+                    width: 100%;
+                    font-size: 18px;
+                    background-color: $button;
+                    border: none;
+                    border-radius: 5%;
+                    color: #fff;
+                    cursor: pointer;
+                }
+                .list {
+                    background-color: $dropdown__button;
+                    list-style-type: none;
+                    position: absolute;
+                    display: none;
+                    width: 100%;
+                    z-index: 100;
+                    .list__item {
+                        padding: 5px;
+                        border: 1px #fff solid;
+                        .link {
+                            text-align: center;
+                            font-size: 18px;
+                            text-decoration: none;
+                            color: #fff;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,222 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  padding: 0 5% 0 5%;
+}
+
+.main {
+  background: url("../img/1.jpg") center center/cover no-repeat;
+}
+
+.header .nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.header .nav .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.header .nav .container .menu {
+  padding: 1.5% 0 1.5% 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 23px;
+}
+.header .nav .container .menu .menu__logo {
+  width: 50%;
+  font-size: 23px;
+}
+.header .nav .container .menu .menu__logo .link {
+  width: 0;
+}
+.header .nav .container .menu .menu__item {
+  list-style-type: none;
+}
+.header .nav .container .menu .menu__item .link {
+  text-decoration: none;
+  color: #fff;
+}
+.header .container {
+  color: #fff;
+  padding: 9% 10em 3% 8em;
+}
+.header .container .title {
+  font-size: 50px;
+}
+.header .container .subtitle {
+  font-size: 25px;
+}
+
+.section__info {
+  color: #fff;
+  padding: 0px 0 25px 0;
+}
+.section__info .container .description {
+  font-size: 22px;
+  text-align: left;
+  padding-top: 15px;
+  width: 90%;
+  margin: 0 auto;
+}
+.section__info .title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.section__category {
+  padding-top: 25px;
+  color: #fff;
+}
+.section__category .container {
+  width: 100%;
+}
+.section__category .container .category__main {
+  padding-bottom: 25px;
+}
+.section__category .container .category__main .carts {
+  margin-top: 50px;
+  display: flex;
+}
+.section__category .container .category__main .carts .hero {
+  display: block;
+}
+.section__category .container .category__main .carts .item {
+  display: block;
+}
+.section__category .container .category__main .carts .skill {
+  display: block;
+}
+.section__category .container .category__main .carts .crip {
+  display: block;
+}
+.section__category .container .category__main .carts .none {
+  display: none;
+}
+.section__category .container .category__main .carts .cart {
+  margin-right: 50px;
+  width: 250px;
+  height: 175px;
+  border: #fff 1px solid;
+}
+.section__category .container .category__main .carts .cart .cart__header {
+  height: 45%;
+  background: red;
+  position: relative;
+  border-bottom: 1px solid #fff;
+}
+.section__category .container .category__main .carts .cart .cart__header .title {
+  position: absolute;
+  font-size: 25px;
+  bottom: 8%;
+  left: 4%;
+  background-color: #000;
+}
+.section__category .container .category__main .carts .cart .cart__header-hero {
+  background: url("../img/carts/hero/header.jpg") center center/cover no-repeat;
+}
+.section__category .container .category__main .carts .cart .cart__header-crip {
+  background: url("../img/carts/crip/header.jpg") center center/cover no-repeat;
+}
+.section__category .container .category__main .carts .cart .cart__header-item {
+  background: url("../img/carts/item/header.jpg") center center/cover no-repeat;
+}
+.section__category .container .category__main .carts .cart .cart__header-skill {
+  background: url("../img/carts/skill/header.jpg") center center/cover no-repeat;
+}
+.section__category .container .category__main .carts .cart .cart__main {
+  position: relative;
+  background: url("../img/1.jpg") center center/cover no-repeat;
+  height: 55%;
+}
+.section__category .container .category__main .carts .cart .cart__main .subtitle {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+}
+.section__category .container .category__main .carts .cart .cart__main .button {
+  margin-top: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  width: 75%;
+  color: #fff;
+  height: 40%;
+  border-radius: 25px;
+  cursor: pointer;
+  border: #fff 1px solid;
+  background: blue;
+}
+.section__category .container .nav {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+}
+.section__category .container .nav .description {
+  font-size: 22px;
+}
+.section__category .container .nav .dropdown__button {
+  margin-left: 3%;
+  width: 10%;
+  position: relative;
+}
+.section__category .container .nav .dropdown__button .button {
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  background-color: #505;
+  border: none;
+  border-radius: 5%;
+  color: #fff;
+  cursor: pointer;
+}
+.section__category .container .nav .dropdown__button .list {
+  background-color: red;
+  list-style-type: none;
+  position: absolute;
+  display: none;
+  width: 100%;
+  z-index: 100;
+}
+.section__category .container .nav .dropdown__button .list .list__item {
+  padding: 5px;
+  border: 1px #fff solid;
+}
+.section__category .container .nav .dropdown__button .list .list__item .link {
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.7);
+}
+.footer .text {
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+.header .nav .container .menu .menu__item .link:hover {
+  color: orange;
+  transition: 0.3s;
+}/*# sourceMappingURL=style.css.map */

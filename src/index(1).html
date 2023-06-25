@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel="icon" href="./img/ico/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <title>DotYar</title>
+</head>
+<body>
+    <div class="main">
+    <div id="main" class="header">
+        <nav class="nav">
+            <div class="container">
+                <ul class="menu">
+                    <li class="menu__item menu__logo">
+                        <a href="" class="link">DotYar</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#main" class="link">Главная</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#about" class="link">О нас</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#category" class="link">Категории</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="title">DotYar - Протестестируй свои знания о игре Dota 2</div>
+            <div class="subtitle">Интересные тесты по игре Dota 2</div>
+        </div>
+    </div>
+<section id="aboute" class="section__info">
+    <div class="title">О нас</div>
+    <div class="container">
+        <p class="description">
+            DotYar - это не только обучение, но и веселое времяпрепровождение. Вы можете испытать себя в различных категориях тестов, таких как герои, стратегии, механика и многое другое. Узнайте свои сильные и слабые стороны в игре и улучшите свои навыки, играя наши тесты.
+            </p>
+    </div>
+</section>
+<section id="category" class="section__category">
+    <div class="container">
+        <div class="nav">
+            <p class="description">Категории:</p>
+            <div class="dropdown__button">
+                <button class="button">Все</button>
+                <ul class = 'list'>
+                    <li class="list__item">
+                        <p href="" id ='all__link'class="link">Все</д>
+                    </li>
+                    <li class="list__item">
+                        <p href="" id ='hero'class="link">Герои</д>
+                    </li>
+                    <li class="list__item">
+                        <p href="" id ='item'class="link">Предметы</p>
+                    </li>
+                    <li class="list__item">
+                        <p href="" id ='skill'class="link">Скиллы</p>
+                    </li>
+                    <li class="list__item">
+                        <p href="" id="crip" class="link">Крипы</p>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <div class="category__main">
+        <div class="row1"></div>
+        <div class="row2"></div>
+    <script type="text/babel">
+function Cart(pross) {
+    return (
+        <div class={pross.cart}>
+        <div class= {pross.header}>
+        <div class="title">{pross.title}</div>
+        </div>
+        <div class={pross.main}>
+        <div class="subtitle">{pross.subtitle}</div>
+        <button class='button'>пройти тест</button>
+        </div>
+        </div>
+    )
+}
+
+const App = (
+    <div class='carts'>
+    <Cart cart='cart all cart__hero' title = "Герои" subtitle = "Тест на знание героев" header='cart__header cart__header-hero' main='cart__main cart__main-hero' />
+    <Cart cart='cart all cart__item' title = "Предметы" subtitle = "Тест на знание Предметов" header='cart__header cart__header-item' main='cart__main cart__main-item' />
+    <Cart cart='cart all cart__skill' title = "Скиллы" subtitle = "Тест на знание Скиллов" header='cart__header cart__header-skill' main='cart__main cart__main-skill' />
+    <Cart cart='cart all cart__crip' title = "Крипы" subtitle = "Тест на знание Крипов" header='cart__header cart__header-crip' main='cart__main cart__main-crip' />
+    </div>
+);
+
+ReactDOM.render(
+App,
+document.querySelector('.row1')
+);
+
+var herocart = document.querySelector(".cart__hero");
+var itemcart = document.querySelector(".cart__item");
+var skillcart = document.querySelector(".cart__skill");
+var cripcart = document.querySelector(".cart__crip");
+
+var button = document.querySelector(".button");
+    var dropdown__list = document.querySelector(".list");
+        var all__link = document.querySelector("#all__link");
+        const all = "Все"
+                var herolink = document.querySelector("#hero");
+                var itemlink = document.querySelector("#item");
+                var skilllink = document.querySelector("#skill");
+                var criplink = document.querySelector("#crip");
+                    const hero = "Герои";
+                    const item = "Предметы";
+                    const skill = "Скиллы";
+                    const crip = "Крипы";
+
+button.addEventListener('click', (e) => {
+    if (dropdown__list.style.display == 'none') {
+        dropdown__list.style.display = 'block'
+    }
+    else {
+        dropdown__list.style.display = 'none'
+    }
+});
+
+
+all__link.addEventListener('click', (e) => {
+    button.textContent = all;
+    button.classList.add("all");
+    button.classList.remove("item", "skill", "crip", "hero");
+    herocart.classList.remove('none');
+    itemcart.classList.remove('none');
+    skillcart.classList.remove('none');
+    cripcart.classList.remove('none');
+    herocart.classList.add('block');
+    itemcart.classList.add('block');
+    skillcart.classList.add('block');
+    cripcart.classList.add('block');
+}); 
+
+herolink.addEventListener('click', (e) => {
+    button.textContent = hero;
+    button.classList.add("hero");
+    button.classList.remove("item", "skill", "crip", "all");
+    herocart.classList.add('block');
+    itemcart.classList.add('none');
+    skillcart.classList.add('none');
+    cripcart.classList.add('none');
+});
+
+itemlink.addEventListener('click', (e) => {
+    button.textContent = item;
+    button.classList.add("item");
+    button.classList.remove("hero", "skill", "crip", "all");
+    itemcart.classList.remove('none');
+    itemcart.classList.add('block');
+    skillcart.classList.add('none');
+    cripcart.classList.add('none');
+    herocart.classList.add('none');
+});
+
+skilllink.addEventListener('click', (e) => {
+    button.textContent = skill;
+    button.classList.add("skill");
+    button.classList.remove("item", "hero", "crip", "all");
+    skillcart.classList.remove('none');
+    skillcart.classList.add('block');
+    itemcart.classList.add('none');
+    cripcart.classList.add('none');
+    herocart.classList.add('none');
+});
+
+criplink.addEventListener('click', (e) => {
+    button.textContent = crip;
+    button.classList.add("item");
+    button.classList.remove("item", "skill", "hero", "all");
+    cripcart.classList.remove('none');
+    cripcart.classList.add('block');
+    skillcart.classList.add('none');
+    itemcart.classList.add('none');
+    herocart.classList.add('none');
+});
+
+
+</script>
+<!-- <script type="text/babel">
+    function Test(pross) {
+    return (
+        <div class = {pross.class}>
+            
+        </div>
+    )
+}
+
+const test = (
+    <div class='test'>
+        <Test />
+    </div>
+);
+
+ReactDOM.render(
+test,
+document.querySelector('body')
+);
+</script> -->
+    </div>
+    </div>
+</section>
+<footer class="footer">
+        <p class="text">Расширьте границы знаний с нашими тестами!</p>
+</footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

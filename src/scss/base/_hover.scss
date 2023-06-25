@@ -1,0 +1,6 @@
+.header .nav .container .menu .menu__item .link {
+    &:hover {
+        color: $navlink-hover;
+        transition: .3s;
+    }
+}
