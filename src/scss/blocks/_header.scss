@@ -2,16 +2,19 @@
     background: $background;
 }
 .header {
-    // background: $background;
+    height: $headerheight;
     .nav {
         background-color: $nav;
         position: fixed;
-        // display: fixed;
         width: 100%;
         z-index: 1000;
         .container {
             padding-top: 0;
             padding-bottom: 0;
+            .hamburger {
+                position: absolute;
+                top: -50000000000%;
+            }
             .menu {
                 padding:1.5% 0 1.5% 0;
                 display: flex;
@@ -36,9 +39,8 @@
     }
     .container {
         color: $header;
-        padding: 9% 10em 3% 8em;
+        padding: 6% 10em 3% 8em;
         .title {
-            // padding-top: 15%;
             font-size: 50px;
         }
         .subtitle {

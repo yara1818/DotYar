@@ -1,15 +1,22 @@
 $navlink: #fff;
-$navlink-hover: orange;
+$navlink-hover: #9271f0;
 $nav: rgba(0, 0, 0, 0.7);
 $header: #fff;
-$button: #505;
-$dropdown__button: red;
+$button: #3812a1;
+$dropdown__button: #4e1ed4;
 $background: url("../img/1.jpg") center (center / cover) no-repeat;
-$cart__button: blue;
+$cart__button: url("../img/botton.jpg") center (center / cover) no-repeat;
 
 $cart__header: url("../img/1.jpg") center (center / cover) no-repeat;
 $cart__header-hero: url("../img/carts/hero/header.jpg") center (center / cover) no-repeat;
 $cart__header-item:url("../img/carts/item/header.jpg") center (center / cover) no-repeat;
 $cart__header-crip:url("../img/carts/crip/header.jpg") center (center / cover) no-repeat;
 $cart__header-skill:url("../img/carts/skill/header.jpg") center (center / cover) no-repeat;
+$testback: url("../img/2.jpg") center (center / cover) no-repeat;
+
+
+$headerheight: 30vh;
+$categoryheight: 40vh;
+$infoheight: 30vh;
+$footerheight: 5vh;
 

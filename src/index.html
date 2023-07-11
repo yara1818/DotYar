@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel="icon" href="./img/ico/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <title>DotYar</title>
+</head>
+<body>
+    <div class="main">
+    <div id="main" class="header">
+        <nav class="nav">
+            <div class="container">
+                <ul class="menu">
+                    <li class="menu__item menu__logo">
+                        <a href="http://lightapps.ru/game/" class="link">DotYar</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#main" class="link">Главная</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#about" class="link">О нас</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#category" class="link">Категории</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <p class="hamburger__title">Меню</p>
+                    <ul class="hamburger__menu">
+                        <li class="menu__item">
+                            <a href="http://lightapps.ru/game/" class="link">DotYar</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#main" class="link">Главная</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#about" class="link">О нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#category" class="link">Категории</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="title">DotYar - Протестестируй свои знания о игре Dota 2</div>
+            <div class="subtitle">Интересные тесты по игре Dota 2</div>
+        </div>
+    </div>
+<section id="aboute" class="section__info">
+    <div class="title">О нас</div>
+    <div class="container">
+        <p class="description">
+            DotYar - это не только обучение, но и веселое времяпрепровождение. Вы можете испытать себя в различных категориях тестов, таких как герои, стратегии, механика и многое другое. Узнайте свои сильные и слабые стороны в игре и улучшите свои навыки, проходя наши тесты.
+            </p>
+    </div>
+</section>
+<section id="category" class="section__category">
+    <div class="container">
+        <div class="nav">
+            <p class="description">Категории:</p>
+            <div class="dropdown__button">
+                <button class="button">Все</button>
+                <ul class = 'list'>
+                    <li class="list__item">
+                        <p href="" id ='all__link'class="link">Все</д>
+                    </li>
+                    <li class="list__item">
+                        <p href="" id ='hero'class="link">Герои</д>
+                    </li>
+                    <li class="list__item">
+                        <p href="" id ='item'class="link">Предметы</p>
+                    </li>
+                    <li class="list__item">
+                        <p href="" id ='skill'class="link">Скиллы</p>
+                    </li>
+                    <li class="list__item">
+                        <p href="" id="crip" class="link">Сленг</p>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <div class="category__main">
+        <div class="test__ques"></div>
+        <div class="row1"></div>
+        <div class="row2"></div>
+    <script type="text/babel">
+function Cart(pross) {
+    return (
+        <div class={pross.cart}>
+        <div class= {pross.header}>
+        <div class="title">{pross.title}</div>
+        </div>
+        <div class={pross.main}>
+        <div class="subtitle">{pross.subtitle}</div>
+        <button class={pross.button}>пройти тест</button>
+        </div>
+        </div>
+    )
+}
+
+const App = (
+    <div class='carts'>
+        <div class="cartrow2">
+    <Cart button='button__cart button button__hero' cart='cart all cart__hero' title = "Герои" subtitle = "Тест на знание героев" header='cart__header cart__header-hero' main='cart__main cart__main-hero' />
+    <Cart button='button__cart button button__item' cart='cart all cart__item' title = "Предметы" subtitle = "Тест на знание Предметов" header='cart__header cart__header-item' main='cart__main cart__main-item' />
+</div>
+<div class="cartrow1">
+    <Cart button='button__cart button button__skill' cart='cart all cart__skill' title = "Скиллы" subtitle = "Тест на знание Скиллов" header='cart__header cart__header-skill' main='cart__main cart__main-skill' />
+    <Cart button='button__cart button button__crip' cart='cart all cart__crip' title = "Сленг" subtitle = "Тест на знание Сленга" header='cart__header cart__header-crip' main='cart__main cart__main-crip' />
+</div>
+    </div>
+);
+
+ReactDOM.render(
+App,
+document.querySelector('.row1')
+);
+
+var herocart = document.querySelector(".cart__hero");
+var itemcart = document.querySelector(".cart__item");
+var skillcart = document.querySelector(".cart__skill");
+var cripcart = document.querySelector(".cart__crip");
+
+var buttonhero = document.querySelector(".button__hero");
+var buttonitem = document.querySelector(".button__item");
+var buttonskill = document.querySelector(".button__skill");
+var buttoncrip = document.querySelector(".button__crip");
+
+
+var button = document.querySelector(".button");
+    var dropdown__list = document.querySelector(".list");
+        var all__link = document.querySelector("#all__link");
+        const all = "Все"
+                var herolink = document.querySelector("#hero");
+                var itemlink = document.querySelector("#item");
+                var skilllink = document.querySelector("#skill");
+                var criplink = document.querySelector("#crip");
+                    const hero = "Герои";
+                    const item = "Предметы";                                
+                    const skill = "Скиллы";
+                    const crip = "Сленг";
+
+button.addEventListener('click', (e) => {
+    if (dropdown__list.style.display == 'none') {
+        dropdown__list.style.display = 'block'
+    }
+    else {
+        dropdown__list.style.display = 'none'
+    }
+});
+
+
+all__link.addEventListener('click', (e) => {
+    button.textContent = all;
+    button.classList.add("all");
+    button.classList.remove("item", "skill", "crip", "hero");
+    herocart.classList.remove('none');
+    itemcart.classList.remove('none');
+    skillcart.classList.remove('none');
+    cripcart.classList.remove('none');
+    herocart.classList.add('block');
+    itemcart.classList.add('block');
+    skillcart.classList.add('block');
+    cripcart.classList.add('block');
+}); 
+
+herolink.addEventListener('click', (e) => {
+    button.textContent = hero;
+    button.classList.add("hero");
+    button.classList.remove("item", "skill", "crip", "all");
+    herocart.classList.add('block');
+    itemcart.classList.add('none');
+    skillcart.classList.add('none');
+    cripcart.classList.add('none');
+});
+
+itemlink.addEventListener('click', (e) => {
+    button.textContent = item;
+    button.classList.add("item");
+    button.classList.remove("hero", "skill", "crip", "all");
+    itemcart.classList.remove('none');
+    itemcart.classList.add('block');
+    skillcart.classList.add('none');
+    cripcart.classList.add('none');
+    herocart.classList.add('none');
+});
+
+skilllink.addEventListener('click', (e) => {
+    button.textContent = skill;
+    button.classList.add("skill");
+    button.classList.remove("item", "hero", "crip", "all");
+    skillcart.classList.remove('none');
+    skillcart.classList.add('block');
+    itemcart.classList.add('none');
+    cripcart.classList.add('none');
+    herocart.classList.add('none');
+});
+
+criplink.addEventListener('click', (e) => {
+    button.textContent = crip;
+    button.classList.add("item");
+    button.classList.remove("item", "skill", "hero", "all");
+    cripcart.classList.remove('none');
+    cripcart.classList.add('block');
+    skillcart.classList.add('none');
+    itemcart.classList.add('none');
+    herocart.classList.add('none');
+});
+
+
+</script>
+
+<script type="text/babel">
+
+        function Test(pross) {
+    return (
+        <div class = {pross.class}>
+            <div class="container">
+                <button class="button__exit">Закрыть</button>
+                <div class={pross.title}>Тест</div>
+                <div class={pross.subtitle}>Тема: Error</div>
+                <div class={pross.main}>
+                    <div class="title">Вопросы:</div>
+                <div class="form">
+                    <div class="row">
+                        <div class= {pross.question1}>
+                        <div class={pross.qtf}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.answfirst}>Ответ</p>
+                            <p class={pross.answsecond}>Ответ</p>
+                            <p class={pross.answtheerd}>Ответ</p>
+                        </div>
+                    </div>
+                    <div class= {pross.question2}>
+                        <div class={pross.qts}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.answfirstfirst}>Ответ</p>
+                            <p class={pross.answsecondsecond}>Ответ</p>
+                            <p class={pross.answtheerdtheerd}>Ответ</p>
+                        </div>
+                    </div>
+                    <div class= {pross.question3}>
+                        <div class={pross.qtt}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.answfirst1}>Ответ</p>
+                            <p class={pross.answsecond2}>Ответ</p>
+                            <p class={pross.answtheerd3}>Ответ</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class= {pross.question4}>
+                        <div class={pross.qtfo}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.answfirstfirst4}>Ответ</p>
+                            <p class={pross.answsecondsecond5}>Ответ</p>
+                            <p class={pross.answtheerdtheerd6}>Ответ</p>
+                        </div>
+                    </div>
+                    <div class= {pross.question5}>
+                        <div class={pross.qtfi}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.answfirstfirst7}>Ответ</p>
+                            <p class={pross.answsecondsecond8}>Ответ</p>
+                            <p class={pross.answtheerdtheerd9}>Ответ</p>
+                        </div>
+                    </div>
+                    <div class= {pross.question6}>
+                        <div class={pross.qtsi}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.answsix}>Ответ</p>
+                            <p class={pross.answsseven}>Ответ</p>
+                            <p class={pross.answeight}>Ответ</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                        <div class= {pross.question7}>
+                        <div class={pross.qtse}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.ans7}>Ответ</p>
+                            <p class={pross.ans8}>Ответ</p>
+                            <p class={pross.ans9}>Ответ</p>
+                        </div>
+                    </div>
+                    <div class= {pross.question8}>
+                        <div class={pross.qteig}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.ans10}>Ответ</p>
+                            <p class={pross.ans11}>Ответ</p>
+                            <p class={pross.ans12}>Ответ</p>
+                        </div>
+                    </div>
+                    <div class= {pross.question9}>
+                        <div class={pross.qtni}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.ans13}>Ответ</p>
+                            <p class={pross.ans14}>Ответ</p>
+                            <p class={pross.ans15}>Ответ</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                        <div class= {pross.question10}>
+                        <div class={pross.qten}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.an1}>Ответ</p>
+                            <p class={pross.an2}>Ответ</p>
+                            <p class={pross.an3}>Ответ</p>
+                        </div>
+                    </div>
+                    <div class= {pross.question11}>
+                        <div class={pross.qtel}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.an4}>Ответ</p>
+                            <p class={pross.an5}>Ответ</p>
+                            <p class={pross.an6}>Ответ</p>
+                        </div>
+                    </div>
+                    <div class= {pross.question12}>
+                        <div class={pross.qttw}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.an7}>Ответ</p>
+                            <p class={pross.an8}>Ответ</p>
+                            <p class={pross.an9}>Ответ</p>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class= {pross.question13}>
+                        <div class={pross.qtthr}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.an10}>Ответ</p>
+                            <p class={pross.an11}>Ответ</p>
+                            <p class={pross.an12}>Ответ</p>
+                        </div>
+                    </div>
+                    <div class= {pross.question14}>
+                        <div class={pross.qtfou}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.an13}>Ответ</p>
+                            <p class={pross.an14}>Ответ</p>
+                            <p class={pross.an15}>Ответ</p>
+                        </div>
+                    </div>
+                    <div class= {pross.question15}>
+                        <div class={pross.qtfiv}>Вопрос</div>
+                        <div class="answers">
+                            <p class={pross.an16}>Ответ</p>
+                            <p class={pross.an17}>Ответ</p>
+                            <p class={pross.an18}>Ответ</p>
+                        </div>
+                    </div>
+                    </div>
+                    <footer class="footer__test">
+                    <div class="row">
+                    <button class ='button__form'>Посмотреть результаты</button>
+                    <p class='total__text'></p>
+                </div>
+            </footer>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    )
+}
+const test = (
+    <div>
+        <Test an1='answer an1' an2='answer an2' an3='answer an3' an4='answer an4' an5='answer an5' an6='answer an6' an7='answer an7' an8='answer an8' an9='answer an9' an10='answer an10' an11='answer an11' an12='answer an12' an13='answer an13' an14='answer an14' an15='answer an15' an16='answer an16' an17='answer an17' an18='answer an18' qtfiv='question__title question__title-fiveteen' qtfou='question__title question__title-fourteen' qtel='question__title quetion__title-eleven' qtthr='question__title question__title-threeteen' qttw='question__title question__title-twelve' qten='question__title question__title-ten' question15='question' question14='question'question13='question'question12='question'question11='question' question10='question' ans15='answer ans15' ans14='answer ans14' ans13='answer ans13' ans12='answer ans12' ans11='answer ans11' ans10='answer ans10' ans9='answer ans9' ans8='answer ans8' ans7='answer ans7' qtni='question__title question__title-nine' qteig='question__title question__title-eight' qtse='question__title question__title-seven' question9='question' question8='question' question7='question' answeight='answer answeight' answsseven='answer answsseven'  answsix='answer answersix' qtsi='question__title question__title-six' question6='question' answtheerdtheerd9='answer answtheerdtheerdnine' answsecondsecond8='answer answfirstfirsteight' answfirstfirst7='answer answfirstfirstseven' answtheerdtheerd6='answer answtheerdtheerdsix' answsecondsecond5='answer answsecondsecondfive' answfirstfirst4='answer answfirstfirstfour' answtheerd3='answer answertheerdthree' answfirst1='answer answerfirstone' answsecond2='answer answersecondtwo' class='test' title='title' subtitle='subtitle-them subtitle'question3='question' question4='question' question5='question' main='test__main' question2='question'  question1='question' qtt='question__title question__title-theerd' qtfo='question__title question__title-four' qtfi='question__title question__title-five' qtf='question__title question__title-first' qts = 'question__title question__title-second' answfirst='answer answerfirst' answfirstfirst='answer answerfirstfirst' answsecond='answer answersecond' answsecondsecond='answer answersecondsecond' answtheerd='answer answertheerd' answtheerdtheerd='answer answtheerdtheerd' />
+    </div>
+);
+
+ReactDOM.render(
+test,
+document.querySelector('.test__ques')
+);
+
+var testtitle = document.querySelector('.subtitle-them'); // Сначала title найдём который сам тему вопроса описывает
+
+var questiontitle = document.querySelector('.question__title'); // потом найдём title 
+var questiontitlef = document.querySelector('.question__title-first'); // найдём title вопрос first
+var questiontitles = document.querySelector('.question__title-second'); // найдём title вопрос second
+var questiontitlet = document.querySelector('.question__title-theerd');
+var questiontitlefi = document.querySelector('.question__title-four');
+var questiontitlefo = document.querySelector('.question__title-five');
+var questiontitlesi = document.querySelector('.question__title-six');
+var questiontitlese = document.querySelector('.question__title-seven');
+var questiontitleei = document.querySelector('.question__title-eight');
+var questiontitleni = document.querySelector('.question__title-nine');
+var questiontitlefivetee = document.querySelector('.question__title-fiveteen');
+var questiontitlefourtee = document.querySelector('.question__title-fourteen');
+var questiontitlethreetee = document.querySelector('.question__title-threeteen');
+var questiontitletwel = document.querySelector('.question__title-twelve');
+var questiontitleelev = document.querySelector('.quetion__title-eleven');
+var questiontitleten = document.querySelector('.question__title-ten');
+
+var answer1 = document.querySelector('.an1');
+var answer2 = document.querySelector('.an2');
+var answer3 = document.querySelector('.an3');
+
+var answer4 = document.querySelector('.an4');
+var answer5 = document.querySelector('.an5');
+var answer6 = document.querySelector('.an6');
+
+var answer7 = document.querySelector('.an7');
+var answer8 = document.querySelector('.an8');
+var answer9 = document.querySelector('.an9');
+
+var answer10 = document.querySelector('.an10');
+var answer11 = document.querySelector('.an11');
+var answer12 = document.querySelector('.an12');
+
+var answer13 = document.querySelector('.an13');
+var answer14 = document.querySelector('.an14');
+var answer15 = document.querySelector('.an15');
+
+var answer16 = document.querySelector('.an16');
+var answer17 = document.querySelector('.an17');
+var answer18 = document.querySelector('.an18');
+
+var answer = document.querySelector('.answer'); // Находим все вопросы
+var buttonform = document.querySelector('.button__form');
+
+var answersevenn = document.querySelector('.ans7');
+var answereightt = document.querySelector('.ans8');
+var answerninee = document.querySelector('.ans9');
+
+var answertenn = document.querySelector('.ans10');
+var answerelevenn = document.querySelector('.ans11');
+var answertwelwee = document.querySelector('.ans12');
+
+var answerthreeteenn = document.querySelector('.ans13');
+var answerfourteenn = document.querySelector('.ans14');
+var answerfiveteenn = document.querySelector('.ans15');
+
+var answersix = document.querySelector('.answersix');
+var answsseven = document.querySelector('.answsseven');
+var answeight = document.querySelector('.answeight');
+
+var answerfirst = document.querySelector('.answerfirst'); // Теперь мы будем искать ответы и в переменные сувать
+var answersecond = document.querySelector('.answersecond');
+var answertheerd = document.querySelector('.answertheerd');
+
+var answerone = document.querySelector('.answerfirstone');
+var answertwo = document.querySelector('.answersecondtwo');
+var answerthee = document.querySelector('.answertheerdthree');
+
+var answerfirstfirst = document.querySelector('.answerfirstfirst'); // Теперь вторую часть ответов
+var answersecondsecond = document.querySelector('.answersecondsecond');
+var answertheerdtheerd = document.querySelector('.answtheerdtheerd');
+
+var answerfourfour = document.querySelector('.answfirstfirstfour');
+var answerfivefive = document.querySelector('.answsecondsecondfive');
+var answersixsix = document.querySelector('.answtheerdtheerdsix');
+
+var answersevenseven = document.querySelector('.answfirstfirstseven');
+var answereigeig = document.querySelector('.answfirstfirsteight');
+var answer99 = document.querySelector('.answtheerdtheerdnine');
+
+var question__titleherof = "Сколько шаров у инвокера";  // Сюда пихаем сам первый вопрос на тему Герои
+var question__titleheros = "Сколько стоит хук пуджа"; // Сюда пихаем сам первый вопрос на тему Герои
+
+buttonhero.addEventListener('click', (e) => {
+    testtitle.textContent = "Тема: Герои";
+    questiontitlef.classList.add('question__title-hero');// Теперь чтобы мы могли изминить вопрос мы добовляем класс question__title-hero теперь класс добавим и туда заполним вопрос
+    questiontitles.classList.add('question__title-hero');
+    questiontitlet.textContent = 'Кто из героев контролирует время?';
+    answer1.textContent = 'Carry';
+    answer2.textContent = 'Support';
+    answer3.textContent = 'Initiator';
+    answer4.textContent = 'Windranger';
+    answer5.textContent = 'Enigma';
+    answer6.textContent = 'Sniper';
+    answer7.textContent = 'Spirit Breaker';
+    answer8.textContent = 'Bloodseeker';
+    answer9.textContent = 'Luna';
+    answer10.textContent = 'Anti-Mage';
+    answer11.textContent = 'Chen';
+    answer12.textContent = 'Puck';
+    answer13.textContent = 'Bounty Hunter';
+    answer14.textContent = 'Storm Spirit';
+    answer15.textContent = 'Zeus';
+    answer16.textContent = 'Bristleback';
+    answer17.textContent = 'Outworld Destroyer';
+    answer18.textContent = 'Pudge';
+    questiontitlefo.textContent = 'Какой герой является ранним универсалом с большим количеством контроля?';
+    questiontitlefi.textContent = 'Кто из героев может станить противников длительным холодом?';
+    questiontitlef.textContent = 'Кто из героев может становиться невидимым?'; // находим наш класс и меняем в нём текст на тот который находится в нашей переменной
+    questiontitles.textContent = 'Какие герои классифицируются как поддержка (support)?';
+    questiontitlese.textContent = 'Какой из героев Dota 2 основан на скандинавской мифологии?';
+    questiontitleei.textContent = 'Какой персонаж является боевым магом (spellcaster)?';
+    questiontitleni.textContent = 'Каким героем можно управлять ордами призраков?';
+    questiontitlefivetee.textContent = 'Кто из них является атакующим героем на основе интеллекта?';
+    questiontitlefourtee.textContent = ' Кто из ниже перечисленных героев является разведчиком?';
+    questiontitlethreetee.textContent = 'Кто является самым неуловимым героем в Dota 2?';
+    questiontitletwel.textContent = 'Кто является самым быстрым героем в Dota 2?';
+    questiontitleelev.textContent = 'Кто из перечисленных героев является лучником?';
+    questiontitleten.textContent = 'Какая обычно роль героя Pudge?';
+    questiontitlesi.textContent = 'Какой герой из Dota 2 был добавлен последним в игру?';
+    answersevenn.textContent = 'Zeus';
+    answereightt.textContent = 'Juggernaut';
+    answerninee.textContent = 'Tinker';
+    answertenn.textContent = 'Alchemist';
+    answerelevenn.textContent = 'Warlock';
+    answertwelwee.textContent = 'Invoker';
+    answerthreeteenn.textContent = 'Death Prophet';
+    answerfourteenn.textContent = 'Shadow Fiend';
+    answerfiveteenn.textContent = 'Pugna';
+    answersix.textContent = 'Monkey King';
+    answersix.classList.add('answersix-hero')
+    answsseven.textContent = 'Dark Willow';
+    answsseven.classList.add('answsseven-hero')
+    answeight.textContent = 'Pangolier';
+    answeight.classList.add('answeight-hero')
+    answerone.textContent = 'Invoker';
+    answerone.classList.add('answerone-hero')
+    answertwo.textContent = 'Doom';
+    answertwo.classList.add('answertwo-hero')
+    answerthee.textContent = 'Faceless Void';
+    answerthee.classList.add('answerthee-hero')
+    answerfirst.textContent = 'Juggernaut'; // Мне лень делать правильно, да и сил нет. Поэтому сюда ответ
+    answerfirst.classList.add('answerfirst-hero');
+    answersecond.textContent = 'Riki'; 
+    answersecond.classList.add('answersecond-hero'); // добовляем класс чтобы использовать с js
+    answertheerd.textContent = 'Lycan';
+    answertheerd.classList.add('answertheerd-hero');
+    answerfirstfirst.textContent = 'Anti-Mage и Phantom Assassin';
+    answerfirstfirst.classList.add('answerfirstfirst-hero');
+    answersecondsecond.textContent = 'Lion и Crystal Maiden';
+    answersecondsecond.classList.add('answersecondsecond-hero');
+    answertheerdtheerd.textContent = 'Axe и Pudge';
+    answertheerdtheerd.classList.add('answertheerdtheerd-hero');
+    answerfourfour.textContent = 'Winter Wyvern';
+    answerfourfour.classList.add('answerfourfour-hero');
+    answerfivefive.textContent = 'Lich';
+    answerfivefive.classList.add('answerfivefive-hero');
+    answersixsix.textContent='Crystal Maiden';
+    answersixsix.classList.add('answersixsix-hero');
+    answersevenseven.textContent = 'Lina';
+    answersevenseven.classList.add('answersevenseven-hero');
+    answereigeig.textContent = 'Lion';
+    answereigeig.classList.add('answereigeig-hero');
+    answer99.textContent = 'Zeus';
+    answer99.classList.add('answer99-hero');
+
+    answerfirst.addEventListener('click', (e) => {
+        answerfirst.classList.add('active');
+        answerfirst.classList.add('true');
+        answersecond.classList.remove('active');
+        answertheerd.classList.remove('active');
+    });
+    answersecond.addEventListener('click', (e) => {
+        answersecond.classList.add('active');
+        answerfirst.classList.remove('active');
+        answerfirst.classList.remove('true');
+        answertheerd.classList.remove('active');
+    });
+    answertheerd.addEventListener('click', (e) => {
+        answertheerd.classList.add('active');
+        answerfirst.classList.remove('true');
+        answersecond.classList.remove('active');
+        answerfirst.classList.remove('active');
+    });
+
+    answerfirstfirst.addEventListener('click', (e) => {
+        answerfirstfirst.classList.add('active');
+        answersecondsecond.classList.remove('active');
+        answertheerdtheerd.classList.remove('active');
+        answersecondsecond.classList.remove('true');
+    });
+    answersecondsecond.addEventListener('click', (e) => {
+        answersecondsecond.classList.add('active');
+        answersecondsecond.classList.add('true');
+        answerfirstfirst.classList.remove('active');
+        answertheerdtheerd.classList.remove('active');
+    });
+    answertheerdtheerd.addEventListener('click', (e) => {
+        answertheerdtheerd.classList.add('active');
+        answersecondsecond.classList.remove('active');
+        answersecondsecond.classList.remove('true');
+        answerfirstfirst.classList.remove('active');
+    });
+    answerone.addEventListener('click', (e) => {
+        answerone.classList.add('active');
+        answertwo.classList.remove('active');
+        answerthee.classList.remove('active');
+        answerthee.classList.remove('true');
+    });
+    answertwo.addEventListener('click', (e) => {
+        answertwo.classList.add('active');
+        answerone.classList.remove('active');
+        answerthee.classList.remove('active');
+        answerthee.classList.remove('true');
+    });
+    answerthee.addEventListener('click', (e) => {
+        answerthee.classList.add('active');
+        answerthee.classList.add('true');
+        answerone.classList.remove('active');
+        answertwo.classList.remove('active');
+    });
+
+    answerfourfour.addEventListener('click', (e) => {
+        answerfourfour.classList.add('active');
+        answerfourfour.classList.add('true');
+        answerfivefive.classList.remove('active');
+        answersixsix.classList.remove('active');
+    });
+    
+    answerfivefive.addEventListener('click', (e) => {
+        answerfivefive.classList.add('active');
+        answerfourfour.classList.remove('active');
+        answerfourfour.classList.remove('true');
+        answersixsix.classList.remove('active');
+    });
+    answersixsix.addEventListener('click', (e) => {
+        answersixsix.classList.add('active');
+        answerfourfour.classList.remove('active');
+        answerfourfour.classList.remove('true');
+        answerfivefive.classList.remove('active');
+    });
+    answersevenseven.addEventListener('click', (e) => {
+        answersevenseven.classList.add('active');
+        answereigeig.classList.remove('active');
+        answer99.classList.remove('active');
+        answereigeig.classList.remove('true');
+    });
+
+    answereigeig.addEventListener('click', (e) => {
+        answereigeig.classList.add('active');
+        answereigeig.classList.add('true');
+        answersevenseven.classList.remove('active');
+        answer99.classList.remove('active');
+    });
+
+    answer99.addEventListener('click', (e) => {
+        answer99.classList.add('active');
+        answereigeig.classList.remove('active');
+        answereigeig.classList.remove('true');
+        answersevenseven.classList.remove('active');
+    });
+
+    answereigeig.addEventListener('click', (e) => {
+        answereigeig.classList.add('active');
+        answereigeig.classList.add('true');
+        answersevenseven.classList.remove('active');
+        answer99.classList.remove('active');
+    });
+
+    answersix.addEventListener('click', (e) => {
+        answersix.classList.add('active');
+        answsseven.classList.remove('active');
+        answsseven.classList.remove('true');
+        answeight.classList.remove('active');
+    });
+
+    answsseven.addEventListener('click', (e) => {
+        answsseven.classList.add('active');
+        answsseven.classList.add('true');
+        answeight.classList.remove('active');
+        answersix.classList.remove('active');
+    });
+
+    answeight.addEventListener('click', (e) => {
+        answeight.classList.add('active');
+        answsseven.classList.remove('active');
+        answsseven.classList.remove('true');
+        answersix.classList.remove('active');
+    });
+
+    answersevenn.addEventListener('click', (e) => {
+        answersevenn.classList.add('active');
+        answereightt.classList.remove('active');
+        answereightt.classList.remove('true');
+        answerninee.classList.remove('active');
+    });
+
+    answereightt.addEventListener('click', (e) => {
+        answereightt.classList.add('active');
+        answereightt.classList.add('true');
+        answerninee.classList.remove('active');
+        answersevenn.classList.remove('active');
+    });
+
+    answerninee.addEventListener('click', (e) => {
+        answerninee.classList.add('active');
+        answereightt.classList.remove('active');
+        answersevenn.classList.remove('true');
+        answersevenn.classList.remove('active');
+    });
+
+//
+    answertenn.addEventListener('click', (e) => {
+        answertenn.classList.add('active');
+        answerelevenn.classList.remove('active');
+        answertwelwee.classList.remove('true');
+        answertwelwee.classList.remove('active');
+    });
+
+    answertwelwee.addEventListener('click', (e) => {
+        answertwelwee.classList.add('active');
+        answertwelwee.classList.add('true');
+        answertenn.classList.remove('active');
+        answerelevenn.classList.remove('active');
+    });
+
+    answerelevenn.addEventListener('click', (e) => {
+        answerelevenn.classList.add('active');
+        answertenn.classList.remove('active');
+        answertwelwee.classList.remove('true');
+        answertwelwee.classList.remove('active');
+    });
+    //
+    answerfourteenn.addEventListener('click', (e) => {
+        answerfourteenn.classList.add('active');
+        answerthreeteenn.classList.remove('active');
+        answerthreeteenn.classList.remove('true');
+        answerfiveteenn.classList.remove('active');
+    });
+
+    answerthreeteenn.addEventListener('click', (e) => {
+        answerthreeteenn.classList.add('active');
+        answerthreeteenn.classList.add('true');
+        answerfourteenn.classList.remove('active');
+        answerfiveteenn.classList.remove('active');
+    });
+
+    answerfiveteenn.addEventListener('click', (e) => {
+        answerfiveteenn.classList.add('active');
+        answerthreeteenn.classList.remove('active');
+        answerthreeteenn.classList.remove('true');
+        answerfourteenn.classList.remove('active');
+    });
+    //
+    answer1.addEventListener('click', (e) => {
+        answer1.classList.add('active');
+        answer2.classList.remove('active');
+        answer3.classList.remove('true');
+        answer3.classList.remove('active');
+    });
+
+    answer2.addEventListener('click', (e) => {
+        answer2.classList.add('active');
+        answer1.classList.remove('active');
+        answer3.classList.remove('true');
+        answer3.classList.remove('active');
+    });
+
+    answer3.addEventListener('click', (e) => {
+        answer3.classList.add('active');
+        answer3.classList.add('true');
+        answer2.classList.remove('active');
+        answer1.classList.remove('active');
+    });
+
+    //
+
+    answer4.addEventListener('click', (e) => {
+        answer4.classList.add('active');
+        answer6.classList.remove('active');
+        answer4.classList.add('true');
+        answer5.classList.remove('active');
+    });
+
+    answer6.addEventListener('click', (e) => {
+        answer6.classList.add('active');
+        answer4.classList.remove('active');
+        answer4.classList.remove('true');
+        answer5.classList.remove('active');
+    });
+
+    answer5.addEventListener('click', (e) => {
+        answer5.classList.add('active');
+        answer6.classList.remove('active');
+        answer4.classList.remove('true');
+        answer4.classList.remove('active');
+    });
+    //
+
+    answer7.addEventListener('click', (e) => {
+        answer7.classList.add('active');
+        answer8.classList.remove('active');
+        answer9.classList.remove('active');
+        answer8.classList.remove('true');
+
+    });
+
+    answer8.addEventListener('click', (e) => {
+        answer8.classList.add('active');
+        answer7.classList.remove('active');
+        answer8.classList.add('true');
+        answer9.classList.remove('active');
+    });
+
+    answer9.addEventListener('click', (e) => {
+        answer9.classList.add('active');
+        answer8.classList.remove('active');
+        answer8.classList.remove('true');
+        answer7.classList.remove('active');
+    });
+
+    //
+    answer10.addEventListener('click', (e) => {
+        answer10.classList.add('active');
+        answer12.classList.remove('active');
+        answer11.classList.remove('active');
+        answer12.classList.remove('true');
+
+    });
+
+    answer12.addEventListener('click', (e) => {
+        answer12.classList.add('active');
+        answer10.classList.remove('active');
+        answer12.classList.add('true');
+        answer11.classList.remove('active');
+    });
+
+    answer11.addEventListener('click', (e) => {
+        answer11.classList.add('active');
+        answer12.classList.remove('active');
+        answer12.classList.remove('true');
+        answer10.classList.remove('active');
+    });
+    
+    //
+    answer14.addEventListener('click', (e) => {
+        answer14.classList.add('active');
+        answer13.classList.remove('active');
+        answer15.classList.remove('active');
+        answer13.classList.remove('true');
+
+    });
+
+    answer13.addEventListener('click', (e) => {
+        answer13.classList.add('active');
+        answer14.classList.remove('active');
+        answer13.classList.add('true');
+        answer15.classList.remove('active');
+    });
+
+    answer15.addEventListener('click', (e) => {
+        answer15.classList.add('active');
+        answer13.classList.remove('active');
+        answer13.classList.remove('true');
+        answer14.classList.remove('active');
+    });
+
+    //
+    answer16.addEventListener('click', (e) => {
+        answer16.classList.add('active');
+        answer17.classList.remove('active');
+        answer18.classList.remove('active');
+        answer17.classList.remove('true');
+
+    });
+
+    answer17.addEventListener('click', (e) => {
+        answer17.classList.add('active');
+        answer16.classList.remove('active');
+        answer17.classList.add('true');
+        answer18.classList.remove('active');
+    });
+
+    answer18.addEventListener('click', (e) => {
+        answer18.classList.add('active');
+        answer17.classList.remove('active');
+        answer17.classList.remove('true');
+        answer16.classList.remove('active');
+    });
+
+
+    function result () {
+    var truetotal = document.getElementsByClassName('true').length; //заносим правильные ответы в переменную total
+    var totaltext = document.querySelector('.total__text'); // здесь мы будем выводить наш результат который будет видеть клиент
+    var textrusult = 0;
+    if (truetotal <= 3) {
+        textrusult = "Ты Бездарный-бездарь!!!"
+    } else if (truetotal <= 5) {
+        textrusult = "Ты Бездарь!"
+    } else if (truetotal <= 8) {
+        textrusult = "Слабоват ты, но пойдёт.."
+    } else if (truetotal <= 10) {
+        textrusult = "Средний уровень, хорош!"
+    } else if (truetotal <= 12) {
+        textrusult = "Good job"
+    } else if (truetotal = 15) {
+        textrusult = "Ez mid GG,WP"
+    }
+    totaltext.textContent = 'Ваш результат: ' + truetotal + '/15' + " " + textrusult; // ну и показываем результат, и сколько правильных из скольки
+    }
+
+
+    buttonform.addEventListener('click', (e) => {
+        result();
+    });
+});
+
+
+
+buttonitem.addEventListener('click', (e) => {
+    testtitle.textContent = "Тема: Предметы";
+    questiontitlet.textContent = 'Какой предмет повышает регенерацию здоровья героя?';
+    answer1.textContent = 'Sentry Ward';
+    answer2.textContent = 'Dust of Appearance';
+    answer3.textContent = 'Observer Ward';
+    answer4.textContent = 'Aegis of the Immortal';
+    answer5.textContent = 'Cheese';
+    answer6.textContent = 'Refresher Orb';
+    answer7.textContent = 'Desolator';
+    answer8.textContent = 'Skull Basher';
+    answer9.textContent = "Heaven's Halberd";
+    answer10.textContent = "Aghanim's Scepter";
+    answer11.textContent = 'Solar Crest';
+    answer12.textContent = 'Desolator';
+    answer13.textContent = 'Quelling Blade';
+    answer14.textContent = 'Maelstrom';
+    answer15.textContent = 'Eye of Skadi';
+    answer16.textContent = 'Daedalus';
+    answer17.textContent = 'Mjollnir';
+    answer18.textContent = 'Blade Mail';
+    questiontitlefo.textContent = 'Какой предмет позволяющий герою вызывать 2 свои иллюзии?';
+    questiontitlefi.textContent = 'Какой предмет придает герою способность невидимости?';
+    questiontitlef.textContent = 'Какой предмет даёт герою увеличенную скорость передвижения?'; // находим наш класс и меняем в нём текст на тот который находится в нашей переменной
+    questiontitles.textContent = 'Какой предмет добавляет герою способность критического удара?';
+    questiontitlese.textContent = 'Какой предмет предоставляет герою защиту от магии?';
+    questiontitleei.textContent = 'Какой предмет добавляет герою способность увеличивать дальность атаки?';
+    questiontitleni.textContent = 'Какой предмет придает герою усиленный вампиризм от атак?';
+    questiontitlefivetee.textContent = 'Какой предмет позволяет герою выпускать молнии при атаке?';
+    questiontitlefourtee.textContent = 'Какой предмет позволяет герою уничтожать преграды и деревья на пути, создавая проходы?';
+    questiontitlethreetee.textContent = 'Какой предмет позволяет герою при атаке снижать броню врагов?';
+    questiontitletwel.textContent = 'Какой предмет дает герою шанс оглушить врага при атаке?';
+    questiontitleelev.textContent = 'Какой предмет позволяет герою вернуться к жизни сразу после смерти?';
+    questiontitleten.textContent = 'Какой предмет позволяет герою открывать видимость на большую площадь?';
+    questiontitlesi.textContent = 'Какой предмет позволяет герою вызывать метеориты и наносить урон площадью?';
+    answersevenn.textContent = 'Monkey King Bar';
+    answereightt.textContent = 'Pipe of Insight'; 
+    answerninee.textContent = "Eul's Scepter of Divinity";
+    answertenn.textContent = 'Lotus Orb';
+    answerelevenn.textContent = 'Skull Basher';
+    answertwelwee.textContent = 'Dragon Lance';
+    answerthreeteenn.textContent = 'Satanic';
+    answerfourteenn.textContent = 'Helm of the Dominator';
+    answerfiveteenn.textContent = 'Dust of Appearance';
+    answersix.textContent = 'Meteor Hammer';
+    answersix.classList.add('answersix-hero')
+    answsseven.textContent = ' Octarine Core';
+    answsseven.classList.add('answsseven-hero')
+    answeight.textContent = 'Bloodthorn';
+    answeight.classList.add('answeight-hero')
+    answerone.textContent = 'Hand of Midas';
+    answerone.classList.add('answerone-hero')
+    answertwo.textContent = 'Orchid Malevolence';
+    answertwo.classList.add('answertwo-hero')
+    answerthee.textContent = 'Heart of Tarrasque';
+    answerthee.classList.add('answerthee-hero')
+    answerfirst.textContent = 'Boots of Travel'; // Мне лень делать правильно, да и сил нет. Поэтому сюда ответ
+    answerfirst.classList.add('answerfirst-hero');
+    answersecond.textContent = 'Butterfly'; 
+    answersecond.classList.add('answersecond-hero'); // добовляем класс чтобы использовать с js
+    answertheerd.textContent = 'Aeon Disk';
+    answertheerd.classList.add('answertheerd-hero');
+    answerfirstfirst.textContent = 'Radiance';
+    answerfirstfirst.classList.add('answerfirstfirst-hero');
+    answersecondsecond.textContent = 'Crystalys';
+    answersecondsecond.classList.add('answersecondsecond-hero');
+    answertheerdtheerd.textContent = 'Eye of Skadi';
+    answertheerdtheerd.classList.add('answertheerdtheerd-hero');
+    answerfourfour.textContent = 'Gem of True Sight';
+    answerfourfour.classList.add('answerfourfour-hero');
+    answerfivefive.textContent = 'Black King Bar';
+    answerfivefive.classList.add('answerfivefive-hero');
+    answersixsix.textContent='Silver Edge';
+    answersixsix.classList.add('answersixsix-hero');
+    answersevenseven.textContent = 'Bloodthorn';
+    answersevenseven.classList.add('answersevenseven-hero');
+    answereigeig.textContent = 'Manta Style';
+    answereigeig.classList.add('answereigeig-hero');
+    answer99.textContent = 'Desolator';
+    answer99.classList.add('answer99-hero');
+     answerfirst.addEventListener('click', (e) => {
+        answerfirst.classList.add('active');
+        answerfirst.classList.add('true');
+        answersecond.classList.remove('active');
+        answertheerd.classList.remove('active');
+    });
+    answersecond.addEventListener('click', (e) => {
+        answersecond.classList.add('active');
+        answerfirst.classList.remove('active');
+        answerfirst.classList.remove('true');
+        answertheerd.classList.remove('active');
+    });
+    answertheerd.addEventListener('click', (e) => {
+        answertheerd.classList.add('active');
+        answerfirst.classList.remove('true');
+        answersecond.classList.remove('active');
+        answerfirst.classList.remove('active');
+    });
+
+    answerfirstfirst.addEventListener('click', (e) => {
+        answerfirstfirst.classList.add('active');
+        answersecondsecond.classList.remove('active');
+        answertheerdtheerd.classList.remove('active');
+        answersecondsecond.classList.remove('true');
+    });
+    answersecondsecond.addEventListener('click', (e) => {
+        answersecondsecond.classList.add('active');
+        answersecondsecond.classList.add('true');
+        answerfirstfirst.classList.remove('active');
+        answertheerdtheerd.classList.remove('active');
+    });
+    answertheerdtheerd.addEventListener('click', (e) => {
+        answertheerdtheerd.classList.add('active');
+        answersecondsecond.classList.remove('active');
+        answersecondsecond.classList.remove('true');
+        answerfirstfirst.classList.remove('active');
+    });
+    answerone.addEventListener('click', (e) => {
+        answerone.classList.add('active');
+        answertwo.classList.remove('active');
+        answerthee.classList.remove('active');
+        answerthee.classList.remove('true');
+    });
+    answertwo.addEventListener('click', (e) => {
+        answertwo.classList.add('active');
+        answerone.classList.remove('active');
+        answerthee.classList.remove('active');
+        answerthee.classList.remove('true');
+    });
+    answerthee.addEventListener('click', (e) => {
+        answerthee.classList.add('active');
+        answerthee.classList.add('true');
+        answerone.classList.remove('active');
+        answertwo.classList.remove('active');
+    });
+//
+    // answerfourfour.addEventListener('click', (e) => {
+    //     answerfourfour.classList.add('active');
+    //     answerfourfour.classList.add('true');
+    //     answerfivefive.classList.remove('active');
+    //     answersixsix.classList.remove('active');
+    // });
+    
+    // answerfivefive.addEventListener('click', (e) => {
+    //     answerfivefive.classList.add('active');
+    //     answerfourfour.classList.remove('active');
+    //     answerfourfour.classList.remove('true');
+    //     answersixsix.classList.remove('active');
+    // });
+    // answersixsix.addEventListener('click', (e) => {
+    //     answersixsix.classList.add('active');
+    //     answerfourfour.classList.remove('active');
+    //     answerfourfour.classList.remove('true');
+    //     answerfivefive.classList.remove('active');
+    // });
+    answerfivefive.addEventListener('click', (e) => { // answersevenseven => answerfivefive
+        answerfivefive.classList.add('active');
+        answersixsix.classList.remove('active');
+        answerfourfour.classList.remove('active');
+        answersixsix.classList.remove('true');
+    });
+    answersixsix.addEventListener('click', (e) => {
+        answersixsix.classList.add('active');
+        answersixsix.classList.add('true');
+        answerfivefive.classList.remove('active');
+        answerfourfour.classList.remove('active');
+    });
+    answerfourfour.addEventListener('click', (e) => {
+        answerfourfour.classList.add('active');
+        answersixsix.classList.remove('active');
+        answersixsix.classList.remove('true');
+        answerfivefive.classList.remove('active');
+    });
+    //
+    // answertenn.addEventListener('click', (e) => {
+    //     answertenn.classList.add('active');
+    //     answerelevenn.classList.remove('active');
+    //     answertwelwee.classList.remove('true');
+    //     answertwelwee.classList.remove('active');
+    // });
+
+    // answertwelwee.addEventListener('click', (e) => {
+    //     answertwelwee.classList.add('active');
+    //     answertwelwee.classList.add('true');
+    //     answertenn.classList.remove('active');
+    //     answerelevenn.classList.remove('active');
+    // });
+
+    // answerelevenn.addEventListener('click', (e) => {
+    //     answerelevenn.classList.add('active');
+    //     answertenn.classList.remove('active');
+    //     answertwelwee.classList.remove('true');
+    //     answertwelwee.classList.remove('active');
+    // })
+    answersevenseven.addEventListener('click', (e) => { //answersevenseven => answereigeig //
+        answersevenseven.classList.add('active'); //
+        answereigeig.classList.remove('active');
+        answer99.classList.remove('active');
+        answereigeig.classList.remove('true');
+    });
+
+    answereigeig.addEventListener('click', (e) => {
+        answereigeig.classList.add('active');
+        answereigeig.classList.add('true');
+        answersevenseven.classList.remove('active'); //
+        answer99.classList.remove('active');
+    });
+
+    answer99.addEventListener('click', (e) => {
+        answer99.classList.add('active');
+        answereigeig.classList.remove('active');
+        answereigeig.classList.remove('true');
+        answersevenseven.classList.remove('active'); //
+    });
+
+    // answersevenseven.addEventListener('click', (e) => {
+    //     answersevenseven.classList.add('active');
+    //     answereigeig.classList.remove('active');
+    //     answer99.classList.remove('active');
+    //     answereigeig.classList.remove('true');
+    // });
+
+    // answereigeig.addEventListener('click', (e) => {
+    //     answereigeig.classList.add('active');
+    //     answereigeig.classList.add('true');
+    //     answersevenseven.classList.remove('active');
+    //     answer99.classList.remove('active');
+    // });
+
+    // answer99.addEventListener('click', (e) => {
+    //     answer99.classList.add('active');
+    //     answereigeig.classList.remove('active');
+    //     answereigeig.classList.remove('true');
+    //     answersevenseven.classList.remove('active');
+    // });
+
+    answereigeig.addEventListener('click', (e) => {
+        answereigeig.classList.add('active');
+        answereigeig.classList.add('true');
+        answersevenseven.classList.remove('active');
+        answer99.classList.remove('active');
+    });
+    //
+
+    answsseven.addEventListener('click', (e) => { // answersix => answsseven
+        answsseven.classList.add('active');
+        answersix.classList.remove('active'); //
+        answersix.classList.remove('true'); //
+        answeight.classList.remove('active');
+    });
+
+    answersix.addEventListener('click', (e) => { //
+        answersix.classList.add('active'); //
+        answersix.classList.add('true'); //
+        answeight.classList.remove('active');
+        answsseven.classList.remove('active');
+    });
+
+    answeight.addEventListener('click', (e) => {
+        answeight.classList.add('active');
+        answersix.classList.remove('active'); //
+        answersix.classList.remove('true'); //
+        answsseven.classList.remove('active');
+    });
+    //
+
+    answersevenn.addEventListener('click', (e) => {
+        answersevenn.classList.add('active');
+        answereightt.classList.remove('active');
+        answereightt.classList.remove('true');
+        answerninee.classList.remove('active');
+    });
+
+    answereightt.addEventListener('click', (e) => {
+        answereightt.classList.add('active');
+        answereightt.classList.add('true');
+        answerninee.classList.remove('active');
+        answersevenn.classList.remove('active');
+    });
+
+    answerninee.addEventListener('click', (e) => {
+        answerninee.classList.add('active');
+        answereightt.classList.remove('active');
+        answersevenn.classList.remove('true');
+        answersevenn.classList.remove('active');
+    });
+
+//
+    answertenn.addEventListener('click', (e) => {
+        answertenn.classList.add('active');
+        answerelevenn.classList.remove('active');
+        answertwelwee.classList.remove('true');
+        answertwelwee.classList.remove('active');
+    });
+
+    answertwelwee.addEventListener('click', (e) => {
+        answertwelwee.classList.add('active');
+        answertwelwee.classList.add('true');
+        answertenn.classList.remove('active');
+        answerelevenn.classList.remove('active');
+    });
+
+    answerelevenn.addEventListener('click', (e) => {
+        answerelevenn.classList.add('active');
+        answertenn.classList.remove('active');
+        answertwelwee.classList.remove('true');
+        answertwelwee.classList.remove('active');
+    });
+    //
+    answerfourteenn.addEventListener('click', (e) => {
+        answerfourteenn.classList.add('active');
+        answerthreeteenn.classList.remove('active');
+        answerthreeteenn.classList.remove('true');
+        answerfiveteenn.classList.remove('active');
+    });
+
+    answerthreeteenn.addEventListener('click', (e) => {
+        answerthreeteenn.classList.add('active');
+        answerthreeteenn.classList.add('true');
+        answerfourteenn.classList.remove('active');
+        answerfiveteenn.classList.remove('active');
+    });
+
+    answerfiveteenn.addEventListener('click', (e) => {
+        answerfiveteenn.classList.add('active');
+        answerthreeteenn.classList.remove('active');
+        answerthreeteenn.classList.remove('true');
+        answerfourteenn.classList.remove('active');
+    });
+    //
+    answer1.addEventListener('click', (e) => {
+        answer1.classList.add('active');
+        answer2.classList.remove('active');
+        answer3.classList.remove('true');
+        answer3.classList.remove('active');
+    });
+
+    answer2.addEventListener('click', (e) => {
+        answer2.classList.add('active');
+        answer1.classList.remove('active');
+        answer3.classList.remove('true');
+        answer3.classList.remove('active');
+    });
+
+    answer3.addEventListener('click', (e) => {
+        answer3.classList.add('active');
+        answer3.classList.add('true');
+        answer2.classList.remove('active');
+        answer1.classList.remove('active');
+    });
+
+    //
+
+    answer4.addEventListener('click', (e) => {
+        answer4.classList.add('active');
+        answer6.classList.remove('active');
+        answer4.classList.add('true');
+        answer5.classList.remove('active');
+    });
+
+    answer6.addEventListener('click', (e) => {
+        answer6.classList.add('active');
+        answer4.classList.remove('active');
+        answer4.classList.remove('true');
+        answer5.classList.remove('active');
+    });
+
+    answer5.addEventListener('click', (e) => {
+        answer5.classList.add('active');
+        answer6.classList.remove('active');
+        answer4.classList.remove('true');
+        answer4.classList.remove('active');
+    });
+    //
+
+    answer7.addEventListener('click', (e) => {
+        answer7.classList.add('active');
+        answer8.classList.remove('active');
+        answer9.classList.remove('active');
+        answer8.classList.remove('true');
+
+    });
+
+    answer8.addEventListener('click', (e) => {
+        answer8.classList.add('active');
+        answer7.classList.remove('active');
+        answer8.classList.add('true');
+        answer9.classList.remove('active');
+    });
+
+    answer9.addEventListener('click', (e) => {
+        answer9.classList.add('active');
+        answer8.classList.remove('active');
+        answer8.classList.remove('true');
+        answer7.classList.remove('active');
+    });
+
+    //
+    answer10.addEventListener('click', (e) => {
+        answer10.classList.add('active');
+        answer12.classList.remove('active');
+        answer11.classList.remove('active');
+        answer12.classList.remove('true');
+
+    });
+
+    answer12.addEventListener('click', (e) => {
+        answer12.classList.add('active');
+        answer10.classList.remove('active');
+        answer12.classList.add('true');
+        answer11.classList.remove('active');
+    });
+
+    answer11.addEventListener('click', (e) => {
+        answer11.classList.add('active');
+        answer12.classList.remove('active');
+        answer12.classList.remove('true');
+        answer10.classList.remove('active');
+    });
+    
+    //
+    answer14.addEventListener('click', (e) => {
+        answer14.classList.add('active');
+        answer13.classList.remove('active');
+        answer15.classList.remove('active');
+        answer13.classList.remove('true');
+
+    });
+
+    answer13.addEventListener('click', (e) => {
+        answer13.classList.add('active');
+        answer14.classList.remove('active');
+        answer13.classList.add('true');
+        answer15.classList.remove('active');
+    });
+
+    answer15.addEventListener('click', (e) => {
+        answer15.classList.add('active');
+        answer13.classList.remove('active');
+        answer13.classList.remove('true');
+        answer14.classList.remove('active');
+    });
+
+    //
+    answer16.addEventListener('click', (e) => {
+        answer16.classList.add('active');
+        answer17.classList.remove('active');
+        answer18.classList.remove('active');
+        answer17.classList.remove('true');
+
+    });
+
+    answer17.addEventListener('click', (e) => {
+        answer17.classList.add('active');
+        answer16.classList.remove('active');
+        answer17.classList.add('true');
+        answer18.classList.remove('active');
+    });
+
+    answer18.addEventListener('click', (e) => {
+        answer18.classList.add('active');
+        answer17.classList.remove('active');
+        answer17.classList.remove('true');
+        answer16.classList.remove('active');
+    });
+    function result () {
+    var truetotal = document.getElementsByClassName('true').length; //заносим правильные ответы в переменную total
+    var totaltext = document.querySelector('.total__text'); // здесь мы будем выводить наш результат который будет видеть клиент
+    var textrusult = 0;
+    if (truetotal <= 3) {
+        textrusult = "Ты Бездарный-бездарь!!!"
+    } else if (truetotal <= 5) {
+        textrusult = "Ты Бездарь!"
+    } else if (truetotal <= 8) {
+        textrusult = "Слабоват ты, но пойдёт.."
+    } else if (truetotal <= 10) {
+        textrusult = "Средний уровень, хорош!"
+    } else if (truetotal <= 12) {
+        textrusult = "Good job"
+    } else if (truetotal = 15) {
+        textrusult = "Ez mid GG,WP"
+    }
+    totaltext.textContent = 'Ваш результат: ' + truetotal + '/15' + " " + textrusult; // ну и показываем результат, и сколько правильных из скольки
+    }
+
+
+    buttonform.addEventListener('click', (e) => {
+        result();
+    });
+});
+
+buttonskill.addEventListener('click', (e) => {
+    testtitle.textContent = "Тема: Скиллы";
+    questiontitlef.classList.add('question__title-hero');// Теперь чтобы мы могли изминить вопрос мы добовляем класс question__title-hero теперь класс добавим и туда заполним вопрос
+    questiontitles.classList.add('question__title-hero');
+    questiontitlet.textContent = 'Что делает скилл "Sun Strike" у героя Invoker?';
+    answer1.textContent = 'Juggernaut';
+    answer2.textContent = 'Queen of Pain';
+    answer3.textContent = 'Anti-Mage';
+    answer4.textContent = 'Spirit Breaker';
+    answer5.textContent = 'Lifestealer';
+    answer6.textContent = 'Storm Spirit';
+    answer7.textContent = 'Telekinesis';
+    answer8.textContent = 'Spell Steal';
+    answer9.textContent = 'Null Field';
+    answer10.textContent = 'Phantom Strike';
+    answer11.textContent = 'Shockwave';
+    answer12.textContent = 'Echo Slam';
+    answer13.textContent = 'Call of the Wild Hawk';
+    answer14.textContent = 'Call of the Wild Boar';
+    answer15.textContent = 'Inner Beast';
+    answer16.textContent = 'Ignite';
+    answer17.textContent = 'Fireblast';
+    answer18.textContent = 'Multicast';
+    questiontitlefo.textContent = 'Какой герой владеет скиллом "Ravage"?';
+    questiontitlefi.textContent = 'У какого героя есть скилл под названием "Song of the Siren"?';
+    questiontitlef.textContent = 'Как называется первый скилл героя Axe?'; // находим наш класс и меняем в нём текст на тот который находится в нашей переменной
+    questiontitles.textContent = 'Сколько секунд длится эффект стана от скилла "Black Hole" у героя Enigma?';
+    questiontitlese.textContent = 'Какое из перечисленных заклинаний является ультимейтом героя Zeus в игре Dota 2?';
+    questiontitleei.textContent = 'Какой герой в Dota 2 обладает заклинанием "Rearm"?';
+    questiontitleni.textContent = 'Какая способность позволяет герою Pugna высасывать жизненную силу из противников?';
+    questiontitlefivetee.textContent = 'Какой навык героя Ogre Magi позволяет ему бросить огненное шаровое заклинание?';
+    questiontitlefourtee.textContent = 'Какая способность героя Beastmaster призывает двух ястребов для разведки территории?';
+    questiontitlethreetee.textContent = 'Какая из слудующих способностей наносит урон по площади?';
+    questiontitletwel.textContent = 'Какой навык у героя Rubick позволяет ему копировать последнее заклинание цели?';
+    questiontitleelev.textContent = 'Какому герою принадлежит способность Charge of Darkness?';
+    questiontitleten.textContent = 'Какой герой обладает способностью Blink?';
+    questiontitlesi.textContent = 'Какой герой обладает заклинанием "Black Hole"?';
+    answersevenn.textContent = 'Static Field';
+    answereightt.textContent = "Thundergod's Wrath";
+    answerninee.textContent = 'Lightning Bolt';
+    answertenn.textContent = 'Weaver';
+    answerelevenn.textContent = 'Mirana';
+    answertwelwee.textContent = 'Tinker';
+    answerthreeteenn.textContent = 'Life Drain';
+    answerfourteenn.textContent = 'Nether Ward';
+    answerfiveteenn.textContent = 'Decrepify';
+    answersix.textContent = 'Lion';
+    answersix.classList.add('answersix-hero')
+    answsseven.textContent = 'Enigma';
+    answsseven.classList.add('answsseven-hero')
+    answeight.textContent = 'Doom';
+    answeight.classList.add('answeight-hero')
+    answerone.textContent = 'Поражает противника метеоритами';
+    answerone.classList.add('answerone-hero')
+    answertwo.textContent = 'Ослепляет противников';
+    answertwo.classList.add('answertwo-hero')
+    answerthee.textContent = 'Наносит чистый урон в точке';
+    answerthee.classList.add('answerthee-hero')
+    answerfirst.textContent = "Berserker's Call"; // Мне лень делать правильно, да и сил нет. Поэтому сюда ответ
+    answerfirst.classList.add('answerfirst-hero');
+    answersecond.textContent = 'Counter Helix'; 
+    answersecond.classList.add('answersecond-hero'); // добовляем класс чтобы использовать с js
+    answertheerd.textContent = 'Battle Hunger';
+    answertheerd.classList.add('answertheerd-hero');
+    answerfirstfirst.textContent = '4s';
+    answerfirstfirst.classList.add('answerfirstfirst-hero');
+    answersecondsecond.textContent = '5s';
+    answersecondsecond.classList.add('answersecondsecond-hero');
+    answertheerdtheerd.textContent = '3.5s';
+    answertheerdtheerd.classList.add('answertheerdtheerd-hero');
+    answerfourfour.textContent = 'Naga Siren';
+    answerfourfour.classList.add('answerfourfour-hero');
+    answerfivefive.textContent = 'Spectre';
+    answerfivefive.classList.add('answerfivefive-hero');
+    answersixsix.textContent='Luna';
+    answersixsix.classList.add('answersixsix-hero');
+    answersevenseven.textContent = 'Faceless Void';
+    answersevenseven.classList.add('answersevenseven-hero');
+    answereigeig.textContent = 'Tidehunter';
+    answereigeig.classList.add('answereigeig-hero');
+    answer99.textContent = 'Pudge';
+    answer99.classList.add('answer99-hero');
+
+    answerfirst.addEventListener('click', (e) => {
+        answerfirst.classList.add('active');
+        answerfirst.classList.add('true');
+        answersecond.classList.remove('active');
+        answertheerd.classList.remove('active');
+    });
+    answersecond.addEventListener('click', (e) => {
+        answersecond.classList.add('active');
+        answerfirst.classList.remove('active');
+        answerfirst.classList.remove('true');
+        answertheerd.classList.remove('active');
+    });
+    answertheerd.addEventListener('click', (e) => {
+        answertheerd.classList.add('active');
+        answerfirst.classList.remove('true');
+        answersecond.classList.remove('active');
+        answerfirst.classList.remove('active');
+    });
+
+    answerfirstfirst.addEventListener('click', (e) => {
+        answerfirstfirst.classList.add('active');
+        answersecondsecond.classList.remove('active');
+        answertheerdtheerd.classList.remove('active');
+        answersecondsecond.classList.remove('true');
+    });
+    answersecondsecond.addEventListener('click', (e) => {
+        answersecondsecond.classList.add('active');
+        answersecondsecond.classList.add('true');
+        answerfirstfirst.classList.remove('active');
+        answertheerdtheerd.classList.remove('active');
+    });
+    answertheerdtheerd.addEventListener('click', (e) => {
+        answertheerdtheerd.classList.add('active');
+        answersecondsecond.classList.remove('active');
+        answersecondsecond.classList.remove('true');
+        answerfirstfirst.classList.remove('active');
+    });
+    answerone.addEventListener('click', (e) => {
+        answerone.classList.add('active');
+        answertwo.classList.remove('active');
+        answerthee.classList.remove('active');
+        answerthee.classList.remove('true');
+    });
+    answertwo.addEventListener('click', (e) => {
+        answertwo.classList.add('active');
+        answerone.classList.remove('active');
+        answerthee.classList.remove('active');
+        answerthee.classList.remove('true');
+    });
+    answerthee.addEventListener('click', (e) => {
+        answerthee.classList.add('active');
+        answerthee.classList.add('true');
+        answerone.classList.remove('active');
+        answertwo.classList.remove('active');
+    });
+
+    answerfourfour.addEventListener('click', (e) => {
+        answerfourfour.classList.add('active');
+        answerfourfour.classList.add('true');
+        answerfivefive.classList.remove('active');
+        answersixsix.classList.remove('active');
+    });
+    
+    answerfivefive.addEventListener('click', (e) => {
+        answerfivefive.classList.add('active');
+        answerfourfour.classList.remove('active');
+        answerfourfour.classList.remove('true');
+        answersixsix.classList.remove('active');
+    });
+    answersixsix.addEventListener('click', (e) => {
+        answersixsix.classList.add('active');
+        answerfourfour.classList.remove('active');
+        answerfourfour.classList.remove('true');
+        answerfivefive.classList.remove('active');
+    });
+    answersevenseven.addEventListener('click', (e) => {
+        answersevenseven.classList.add('active');
+        answereigeig.classList.remove('active');
+        answer99.classList.remove('active');
+        answereigeig.classList.remove('true');
+    });
+
+    answereigeig.addEventListener('click', (e) => {
+        answereigeig.classList.add('active');
+        answereigeig.classList.add('true');
+        answersevenseven.classList.remove('active');
+        answer99.classList.remove('active');
+    });
+
+    answer99.addEventListener('click', (e) => {
+        answer99.classList.add('active');
+        answereigeig.classList.remove('active');
+        answereigeig.classList.remove('true');
+        answersevenseven.classList.remove('active');
+    });
+
+    answereigeig.addEventListener('click', (e) => {
+        answereigeig.classList.add('active');
+        answereigeig.classList.add('true');
+        answersevenseven.classList.remove('active');
+        answer99.classList.remove('active');
+    });
+
+    answersix.addEventListener('click', (e) => {
+        answersix.classList.add('active');
+        answsseven.classList.remove('active');
+        answsseven.classList.remove('true');
+        answeight.classList.remove('active');
+    });
+
+    answsseven.addEventListener('click', (e) => {
+        answsseven.classList.add('active');
+        answsseven.classList.add('true');
+        answeight.classList.remove('active');
+        answersix.classList.remove('active');
+    });
+
+    answeight.addEventListener('click', (e) => {
+        answeight.classList.add('active');
+        answsseven.classList.remove('active');
+        answsseven.classList.remove('true');
+        answersix.classList.remove('active');
+    });
+
+    answersevenn.addEventListener('click', (e) => {
+        answersevenn.classList.add('active');
+        answereightt.classList.remove('active');
+        answereightt.classList.remove('true');
+        answerninee.classList.remove('active');
+    });
+
+    answereightt.addEventListener('click', (e) => {
+        answereightt.classList.add('active');
+        answereightt.classList.add('true');
+        answerninee.classList.remove('active');
+        answersevenn.classList.remove('active');
+    });
+
+    answerninee.addEventListener('click', (e) => {
+        answerninee.classList.add('active');
+        answereightt.classList.remove('active');
+        answersevenn.classList.remove('true');
+        answersevenn.classList.remove('active');
+    });
+
+//
+    answertenn.addEventListener('click', (e) => {
+        answertenn.classList.add('active');
+        answerelevenn.classList.remove('active');
+        answertwelwee.classList.remove('true');
+        answertwelwee.classList.remove('active');
+    });
+
+    answertwelwee.addEventListener('click', (e) => {
+        answertwelwee.classList.add('active');
+        answertwelwee.classList.add('true');
+        answertenn.classList.remove('active');
+        answerelevenn.classList.remove('active');
+    });
+
+    answerelevenn.addEventListener('click', (e) => {
+        answerelevenn.classList.add('active');
+        answertenn.classList.remove('active');
+        answertwelwee.classList.remove('true');
+        answertwelwee.classList.remove('active');
+    });
+    //
+    answerfourteenn.addEventListener('click', (e) => {
+        answerfourteenn.classList.add('active');
+        answerthreeteenn.classList.remove('active');
+        answerthreeteenn.classList.remove('true');
+        answerfiveteenn.classList.remove('active');
+    });
+
+    answerthreeteenn.addEventListener('click', (e) => {
+        answerthreeteenn.classList.add('active');
+        answerthreeteenn.classList.add('true');
+        answerfourteenn.classList.remove('active');
+        answerfiveteenn.classList.remove('active');
+    });
+
+    answerfiveteenn.addEventListener('click', (e) => {
+        answerfiveteenn.classList.add('active');
+        answerthreeteenn.classList.remove('active');
+        answerthreeteenn.classList.remove('true');
+        answerfourteenn.classList.remove('active');
+    });
+    //
+    answer1.addEventListener('click', (e) => {
+        answer1.classList.add('active');
+        answer2.classList.remove('active');
+        answer3.classList.remove('true');
+        answer3.classList.remove('active');
+    });
+
+    answer2.addEventListener('click', (e) => {
+        answer2.classList.add('active');
+        answer1.classList.remove('active');
+        answer3.classList.remove('true');
+        answer3.classList.remove('active');
+    });
+
+    answer3.addEventListener('click', (e) => {
+        answer3.classList.add('active');
+        answer3.classList.add('true');
+        answer2.classList.remove('active');
+        answer1.classList.remove('active');
+    });
+
+    //
+
+    answer4.addEventListener('click', (e) => {
+        answer4.classList.add('active');
+        answer6.classList.remove('active');
+        answer4.classList.add('true');
+        answer5.classList.remove('active');
+    });
+
+    answer6.addEventListener('click', (e) => {
+        answer6.classList.add('active');
+        answer4.classList.remove('active');
+        answer4.classList.remove('true');
+        answer5.classList.remove('active');
+    });
+
+    answer5.addEventListener('click', (e) => {
+        answer5.classList.add('active');
+        answer6.classList.remove('active');
+        answer4.classList.remove('true');
+        answer4.classList.remove('active');
+    });
+    //
+
+    answer7.addEventListener('click', (e) => {
+        answer7.classList.add('active');
+        answer8.classList.remove('active');
+        answer9.classList.remove('active');
+        answer8.classList.remove('true');
+
+    });
+
+    answer8.addEventListener('click', (e) => {
+        answer8.classList.add('active');
+        answer7.classList.remove('active');
+        answer8.classList.add('true');
+        answer9.classList.remove('active');
+    });
+
+    answer9.addEventListener('click', (e) => {
+        answer9.classList.add('active');
+        answer8.classList.remove('active');
+        answer8.classList.remove('true');
+        answer7.classList.remove('active');
+    });
+
+    //
+    answer10.addEventListener('click', (e) => {
+        answer10.classList.add('active');
+        answer12.classList.remove('active');
+        answer11.classList.remove('active');
+        answer12.classList.remove('true');
+
+    });
+
+    answer12.addEventListener('click', (e) => {
+        answer12.classList.add('active');
+        answer10.classList.remove('active');
+        answer12.classList.add('true');
+        answer11.classList.remove('active');
+    });
+
+    answer11.addEventListener('click', (e) => {
+        answer11.classList.add('active');
+        answer12.classList.remove('active');
+        answer12.classList.remove('true');
+        answer10.classList.remove('active');
+    });
+    
+    //
+    answer14.addEventListener('click', (e) => {
+        answer14.classList.add('active');
+        answer13.classList.remove('active');
+        answer15.classList.remove('active');
+        answer13.classList.remove('true');
+
+    });
+
+    answer13.addEventListener('click', (e) => {
+        answer13.classList.add('active');
+        answer14.classList.remove('active');
+        answer13.classList.add('true');
+        answer15.classList.remove('active');
+    });
+
+    answer15.addEventListener('click', (e) => {
+        answer15.classList.add('active');
+        answer13.classList.remove('active');
+        answer13.classList.remove('true');
+        answer14.classList.remove('active');
+    });
+
+    //
+    answer16.addEventListener('click', (e) => {
+        answer16.classList.add('active');
+        answer17.classList.remove('active');
+        answer18.classList.remove('active');
+        answer17.classList.remove('true');
+
+    });
+
+    answer17.addEventListener('click', (e) => {
+        answer17.classList.add('active');
+        answer16.classList.remove('active');
+        answer17.classList.add('true');
+        answer18.classList.remove('active');
+    });
+
+    answer18.addEventListener('click', (e) => {
+        answer18.classList.add('active');
+        answer17.classList.remove('active');
+        answer17.classList.remove('true');
+        answer16.classList.remove('active');
+    });
+
+
+    function result () {
+    var truetotal = document.getElementsByClassName('true').length; //заносим правильные ответы в переменную total
+    var totaltext = document.querySelector('.total__text'); // здесь мы будем выводить наш результат который будет видеть клиент
+    var textrusult = 0;
+    if (truetotal <= 3) {
+        textrusult = "Ты Бездарный-бездарь!!!"
+    } else if (truetotal <= 5) {
+        textrusult = "Ты Бездарь!"
+    } else if (truetotal <= 8) {
+        textrusult = "Слабоват ты, но пойдёт.."
+    } else if (truetotal <= 10) {
+        textrusult = "Средний уровень, хорош!"
+    } else if (truetotal <= 12) {
+        textrusult = "Good job"
+    } else if (truetotal = 15) {
+        textrusult = "Ez mid GG,WP"
+    }
+    totaltext.textContent = 'Ваш результат: ' + truetotal + '/15' + " " + textrusult; // ну и показываем результат, и сколько правильных из скольки
+    }
+
+
+    buttonform.addEventListener('click', (e) => {
+        result();
+    });
+});
+
+buttoncrip.addEventListener('click', (e) => {
+    testtitle.textContent = "Тема: Сленг";
+    questiontitlet.textContent = 'Какой термин используется в Dota 2 для обозначения обмана противника с целью изменить исход битвы?';
+    answer1.textContent = '-100 MMR узник';
+    answer2.textContent = 'Magic Mastery Requirements';
+    answer3.textContent = 'Matchmaking Rating';
+    answer4.textContent = 'Появление маленьких рошанчиков';
+    answer5.textContent = 'Усиленные крипы';
+    answer6.textContent = 'Исчезновение крипов';
+    answer7.textContent = 'Бег по крышам зданий';
+    answer8.textContent = 'Уничтожение мобильной единицы противника';
+    answer9.textContent = "Групповой танец";
+    answer10.textContent = "All Friendly Kills";
+    answer11.textContent = 'Бездарь, выйди уже с амулета!';
+    answer12.textContent = 'Always Farming King';
+    answer13.textContent = 'Игрок, играющий на низком рейтинге, несоответствующем его навыкам';
+    answer14.textContent = 'Голубой смурфик';
+    answer15.textContent = 'Киберспортивная команда';
+    answer16.textContent = 'Support';
+    answer17.textContent = 'АЛО, ВСТАНЬТЕ В АФК. Я СОЛО ИГРУ ВЫИГРАЮ'; 
+    answer18.textContent = 'Mider';
+    questiontitlefo.textContent = 'Что означает "Ward" в игре Dota 2?';
+    questiontitlefi.textContent = 'Что означает "Aegis"?';   
+    questiontitlef.textContent = 'Какой термин используется в Dota 2 для обозначения игрока, чьи действия вредят своей команде? '; // находим наш класс и меняем в нём текст на тот который находится в нашей переменной
+    questiontitles.textContent = 'Что означает выражение "gg"?';
+    questiontitlese.textContent = 'Что означает "MKB"?';
+    questiontitleei.textContent = 'Что означает аббревиатура "CS"?';
+    questiontitleni.textContent = 'Что означает "gg end"?';
+    questiontitlefivetee.textContent = 'Какой термин описывает игрока, который играет на соло-лайне без поддержки команды?';
+    questiontitlefourtee.textContent = 'Что означает термин "smurf"?';
+    questiontitlethreetee.textContent = 'Что обозначает термин "AFK"?';
+    questiontitletwel.textContent = 'Что такое "Courier Snipe"?';
+    questiontitleelev.textContent = 'Что означает "Mega Creeps"?';
+    questiontitleten.textContent = 'Что означает аббревиатура "MMR"?';
+    questiontitlesi.textContent = 'Что значит "ez mid"?';
+    answersevenn.textContent = 'Black King Bar';
+    answereightt.textContent = 'Monkey King Bar'; 
+    answerninee.textContent = "Мини-кафе в игрушечном городе";
+    answertenn.textContent = 'Counter-Strike';
+    answerelevenn.textContent = 'Critical Shot (критический удар)';
+    answertwelwee.textContent = 'Creep Score (количество убитых крипов)';
+    answerthreeteenn.textContent = 'Сносите, тима раков!';
+    answerfourteenn.textContent = 'Рошан убил хускара';
+    answerfiveteenn.textContent = 'Появление мощного противника на карте';
+    answersix.textContent = 'Easy mid';
+    answersix.classList.add('answersix-hero')
+    answsseven.textContent = 'Если это пишут значит мид стоял Федя!'; // Заменить
+    answsseven.classList.add('answsseven-hero')
+    answeight.textContent = "I'm a bad mider";
+    answeight.classList.add('answeight-hero')
+    answerone.textContent = 'Illusion';
+    answerone.classList.add('answerone-hero')
+    answertwo.textContent = 'Smoking';
+    answertwo.classList.add('answertwo-hero')
+    answerthee.textContent = 'Baiting';
+    answerthee.classList.add('answerthee-hero')
+    answerfirst.textContent = 'Feeder'; // Мне лень делать правильно, да и сил нет. Поэтому сюда ответ
+    answerfirst.classList.add('answerfirst-hero');
+    answersecond.textContent = 'Ganker'; 
+    answersecond.classList.add('answersecond-hero'); // добовляем класс чтобы использовать с js
+    answertheerd.textContent = 'Support';
+    answertheerd.classList.add('answertheerd-hero');
+    answerfirstfirst.textContent = 'Great grab';
+    answerfirstfirst.classList.add('answerfirstfirst-hero');
+    answersecondsecond.textContent = 'Good game';
+    answersecondsecond.classList.add('answersecondsecond-hero');
+    answertheerdtheerd.textContent = 'Go go';
+    answertheerdtheerd.classList.add('answertheerdtheerd-hero');
+    answerfourfour.textContent = 'Пассажирский автобус в игре';
+    answerfourfour.classList.add('answerfourfour-hero');
+    answerfivefive.textContent = 'Эмоция, вызванная отличным ходом';
+    answerfivefive.classList.add('answerfivefive-hero');
+    answersixsix.textContent='Предмет, дающий вторую жизнь игроку';
+    answersixsix.classList.add('answersixsix-hero');
+    answersevenseven.textContent = 'Курьер';
+    answersevenseven.classList.add('answersevenseven-hero');
+    answereigeig.textContent = 'Предмет, который обеспечивает видимость на карте';
+    answereigeig.classList.add('answereigeig-hero');
+    answer99.textContent = 'Легендарное оружие';
+    answer99.classList.add('answer99-hero');
+     answerfirst.addEventListener('click', (e) => {
+        answerfirst.classList.add('active');
+        answerfirst.classList.add('true');
+        answersecond.classList.remove('active');
+        answertheerd.classList.remove('active');
+    });
+    answersecond.addEventListener('click', (e) => {
+        answersecond.classList.add('active');
+        answerfirst.classList.remove('active');
+        answerfirst.classList.remove('true');
+        answertheerd.classList.remove('active');
+    });
+    answertheerd.addEventListener('click', (e) => {
+        answertheerd.classList.add('active');
+        answerfirst.classList.remove('true');
+        answersecond.classList.remove('active');
+        answerfirst.classList.remove('active');
+    });
+
+    answerfirstfirst.addEventListener('click', (e) => {
+        answerfirstfirst.classList.add('active');
+        answersecondsecond.classList.remove('active');
+        answertheerdtheerd.classList.remove('active');
+        answersecondsecond.classList.remove('true');
+    });
+    answersecondsecond.addEventListener('click', (e) => {
+        answersecondsecond.classList.add('active');
+        answersecondsecond.classList.add('true');
+        answerfirstfirst.classList.remove('active');
+        answertheerdtheerd.classList.remove('active');
+    });
+    answertheerdtheerd.addEventListener('click', (e) => {
+        answertheerdtheerd.classList.add('active');
+        answersecondsecond.classList.remove('active');
+        answersecondsecond.classList.remove('true');
+        answerfirstfirst.classList.remove('active');
+    });
+    answerone.addEventListener('click', (e) => {
+        answerone.classList.add('active');
+        answertwo.classList.remove('active');
+        answerthee.classList.remove('active');
+        answerthee.classList.remove('true');
+    });
+    answertwo.addEventListener('click', (e) => {
+        answertwo.classList.add('active');
+        answerone.classList.remove('active');
+        answerthee.classList.remove('active');
+        answerthee.classList.remove('true');
+    });
+    answerthee.addEventListener('click', (e) => {
+        answerthee.classList.add('active');
+        answerthee.classList.add('true');
+        answerone.classList.remove('active');
+        answertwo.classList.remove('active');
+    });
+//
+    // answerfourfour.addEventListener('click', (e) => {
+    //     answerfourfour.classList.add('active');
+    //     answerfourfour.classList.add('true');
+    //     answerfivefive.classList.remove('active');
+    //     answersixsix.classList.remove('active');
+    // });
+    
+    // answerfivefive.addEventListener('click', (e) => {
+    //     answerfivefive.classList.add('active');
+    //     answerfourfour.classList.remove('active');
+    //     answerfourfour.classList.remove('true');
+    //     answersixsix.classList.remove('active');
+    // });
+    // answersixsix.addEventListener('click', (e) => {
+    //     answersixsix.classList.add('active');
+    //     answerfourfour.classList.remove('active');
+    //     answerfourfour.classList.remove('true');
+    //     answerfivefive.classList.remove('active');
+    // });
+    answerfivefive.addEventListener('click', (e) => { // answersevenseven => answerfivefive
+        answerfivefive.classList.add('active');
+        answersixsix.classList.remove('active');
+        answerfourfour.classList.remove('active');
+        answersixsix.classList.remove('true');
+    });
+    answersixsix.addEventListener('click', (e) => {
+        answersixsix.classList.add('active');
+        answersixsix.classList.add('true');
+        answerfivefive.classList.remove('active');
+        answerfourfour.classList.remove('active');
+    });
+    answerfourfour.addEventListener('click', (e) => {
+        answerfourfour.classList.add('active');
+        answersixsix.classList.remove('active');
+        answersixsix.classList.remove('true');
+        answerfivefive.classList.remove('active');
+    });
+    //
+    // answertenn.addEventListener('click', (e) => {
+    //     answertenn.classList.add('active');
+    //     answerelevenn.classList.remove('active');
+    //     answertwelwee.classList.remove('true');
+    //     answertwelwee.classList.remove('active');
+    // });
+
+    // answertwelwee.addEventListener('click', (e) => {
+    //     answertwelwee.classList.add('active');
+    //     answertwelwee.classList.add('true');
+    //     answertenn.classList.remove('active');
+    //     answerelevenn.classList.remove('active');
+    // });
+
+    // answerelevenn.addEventListener('click', (e) => {
+    //     answerelevenn.classList.add('active');
+    //     answertenn.classList.remove('active');
+    //     answertwelwee.classList.remove('true');
+    //     answertwelwee.classList.remove('active');
+    // })
+    answersevenseven.addEventListener('click', (e) => { //answersevenseven => answereigeig //
+        answersevenseven.classList.add('active'); //
+        answereigeig.classList.remove('active');
+        answer99.classList.remove('active');
+        answereigeig.classList.remove('true');
+    });
+
+    answereigeig.addEventListener('click', (e) => {
+        answereigeig.classList.add('active');
+        answereigeig.classList.add('true');
+        answersevenseven.classList.remove('active'); //
+        answer99.classList.remove('active');
+    });
+
+    answer99.addEventListener('click', (e) => {
+        answer99.classList.add('active');
+        answereigeig.classList.remove('active');
+        answereigeig.classList.remove('true');
+        answersevenseven.classList.remove('active'); //
+    });
+
+    // answersevenseven.addEventListener('click', (e) => {
+    //     answersevenseven.classList.add('active');
+    //     answereigeig.classList.remove('active');
+    //     answer99.classList.remove('active');
+    //     answereigeig.classList.remove('true');
+    // });
+
+    // answereigeig.addEventListener('click', (e) => {
+    //     answereigeig.classList.add('active');
+    //     answereigeig.classList.add('true');
+    //     answersevenseven.classList.remove('active');
+    //     answer99.classList.remove('active');
+    // });
+
+    // answer99.addEventListener('click', (e) => {
+    //     answer99.classList.add('active');
+    //     answereigeig.classList.remove('active');
+    //     answereigeig.classList.remove('true');
+    //     answersevenseven.classList.remove('active');
+    // });
+
+    answereigeig.addEventListener('click', (e) => {
+        answereigeig.classList.add('active');
+        answereigeig.classList.add('true');
+        answersevenseven.classList.remove('active');
+        answer99.classList.remove('active');
+    });
+    //
+
+    answsseven.addEventListener('click', (e) => { // answersix => answsseven
+        answsseven.classList.add('active');
+        answersix.classList.remove('active'); //
+        answersix.classList.remove('true'); //
+        answeight.classList.remove('active');
+    });
+
+    answersix.addEventListener('click', (e) => { //
+        answersix.classList.add('active'); //
+        answersix.classList.add('true'); //
+        answeight.classList.remove('active');
+        answsseven.classList.remove('active');
+    });
+
+    answeight.addEventListener('click', (e) => {
+        answeight.classList.add('active');
+        answersix.classList.remove('active'); //
+        answersix.classList.remove('true'); //
+        answsseven.classList.remove('active');
+    });
+    //
+
+    answersevenn.addEventListener('click', (e) => {
+        answersevenn.classList.add('active');
+        answereightt.classList.remove('active');
+        answereightt.classList.remove('true');
+        answerninee.classList.remove('active');
+    });
+
+    answereightt.addEventListener('click', (e) => {
+        answereightt.classList.add('active');
+        answereightt.classList.add('true');
+        answerninee.classList.remove('active');
+        answersevenn.classList.remove('active');
+    });
+
+    answerninee.addEventListener('click', (e) => {
+        answerninee.classList.add('active');
+        answereightt.classList.remove('active');
+        answersevenn.classList.remove('true');
+        answersevenn.classList.remove('active');
+    });
+
+//
+    answertenn.addEventListener('click', (e) => {
+        answertenn.classList.add('active');
+        answerelevenn.classList.remove('active');
+        answertwelwee.classList.remove('true');
+        answertwelwee.classList.remove('active');
+    });
+
+    answertwelwee.addEventListener('click', (e) => {
+        answertwelwee.classList.add('active');
+        answertwelwee.classList.add('true');
+        answertenn.classList.remove('active');
+        answerelevenn.classList.remove('active');
+    });
+
+    answerelevenn.addEventListener('click', (e) => {
+        answerelevenn.classList.add('active');
+        answertenn.classList.remove('active');
+        answertwelwee.classList.remove('true');
+        answertwelwee.classList.remove('active');
+    });
+    //
+    answerfourteenn.addEventListener('click', (e) => {
+        answerfourteenn.classList.add('active');
+        answerthreeteenn.classList.remove('active');
+        answerthreeteenn.classList.remove('true');
+        answerfiveteenn.classList.remove('active');
+    });
+
+    answerthreeteenn.addEventListener('click', (e) => {
+        answerthreeteenn.classList.add('active');
+        answerthreeteenn.classList.add('true');
+        answerfourteenn.classList.remove('active');
+        answerfiveteenn.classList.remove('active');
+    });
+
+    answerfiveteenn.addEventListener('click', (e) => {
+        answerfiveteenn.classList.add('active');
+        answerthreeteenn.classList.remove('active');
+        answerthreeteenn.classList.remove('true');
+        answerfourteenn.classList.remove('active');
+    });
+    //
+    answer1.addEventListener('click', (e) => {
+        answer1.classList.add('active');
+        answer2.classList.remove('active');
+        answer3.classList.remove('true');
+        answer3.classList.remove('active');
+    });
+
+    answer2.addEventListener('click', (e) => {
+        answer2.classList.add('active');
+        answer1.classList.remove('active');
+        answer3.classList.remove('true');
+        answer3.classList.remove('active');
+    });
+
+    answer3.addEventListener('click', (e) => {
+        answer3.classList.add('active');
+        answer3.classList.add('true');
+        answer2.classList.remove('active');
+        answer1.classList.remove('active');
+    });
+
+    //
+
+    answer4.addEventListener('click', (e) => {
+        answer4.classList.add('active');
+        answer6.classList.remove('active');
+        answer4.classList.add('true');
+        answer5.classList.remove('active');
+    });
+
+    answer6.addEventListener('click', (e) => {
+        answer6.classList.add('active');
+        answer4.classList.remove('active');
+        answer4.classList.remove('true');
+        answer5.classList.remove('active');
+    });
+
+    answer5.addEventListener('click', (e) => {
+        answer5.classList.add('active');
+        answer6.classList.remove('active');
+        answer4.classList.remove('true');
+        answer4.classList.remove('active');
+    });
+    //
+
+    answer7.addEventListener('click', (e) => {
+        answer7.classList.add('active');
+        answer8.classList.remove('active');
+        answer9.classList.remove('active');
+        answer8.classList.remove('true');
+
+    });
+
+    answer8.addEventListener('click', (e) => {
+        answer8.classList.add('active');
+        answer7.classList.remove('active');
+        answer8.classList.add('true');
+        answer9.classList.remove('active');
+    });
+
+    answer9.addEventListener('click', (e) => {
+        answer9.classList.add('active');
+        answer8.classList.remove('active');
+        answer8.classList.remove('true');
+        answer7.classList.remove('active');
+    });
+
+    //
+    answer10.addEventListener('click', (e) => {
+        answer10.classList.add('active');
+        answer12.classList.remove('active');
+        answer11.classList.remove('active');
+        answer12.classList.remove('true');
+
+    });
+
+    answer12.addEventListener('click', (e) => {
+        answer12.classList.add('active');
+        answer10.classList.remove('active');
+        answer12.classList.add('true');
+        answer11.classList.remove('active');
+    });
+
+    answer11.addEventListener('click', (e) => {
+        answer11.classList.add('active');
+        answer12.classList.remove('active');
+        answer12.classList.remove('true');
+        answer10.classList.remove('active');
+    });
+    
+    //
+    answer14.addEventListener('click', (e) => {
+        answer14.classList.add('active');
+        answer13.classList.remove('active');
+        answer15.classList.remove('active');
+        answer13.classList.remove('true');
+
+    });
+
+    answer13.addEventListener('click', (e) => {
+        answer13.classList.add('active');
+        answer14.classList.remove('active');
+        answer13.classList.add('true');
+        answer15.classList.remove('active');
+    });
+
+    answer15.addEventListener('click', (e) => {
+        answer15.classList.add('active');
+        answer13.classList.remove('active');
+        answer13.classList.remove('true');
+        answer14.classList.remove('active');
+    });
+
+    //
+    answer16.addEventListener('click', (e) => {
+        answer16.classList.add('active');
+        answer17.classList.remove('active');
+        answer18.classList.remove('active');
+        answer17.classList.remove('true');
+
+    });
+
+    answer17.addEventListener('click', (e) => {
+        answer17.classList.add('active');
+        answer16.classList.remove('active');
+        answer17.classList.add('true');
+        answer18.classList.remove('active');
+    });
+
+    answer18.addEventListener('click', (e) => {
+        answer18.classList.add('active');
+        answer17.classList.remove('active');
+        answer17.classList.remove('true');
+        answer16.classList.remove('active');
+    });
+    function result () {
+    var truetotal = document.getElementsByClassName('true').length; //заносим правильные ответы в переменную total
+    var totaltext = document.querySelector('.total__text'); // здесь мы будем выводить наш результат который будет видеть клиент
+    var textrusult = 0;
+    if (truetotal <= 3) {
+        textrusult = "Ты Бездарный-бездарь!!!"
+    } else if (truetotal <= 5) {
+        textrusult = "Ты Бездарь!"
+    } else if (truetotal <= 8) {
+        textrusult = "Слабоват ты, но пойдёт.."
+    } else if (truetotal <= 10) {
+        textrusult = "Средний уровень, хорош!"
+    } else if (truetotal <= 12) {
+        textrusult = "Good job"
+    } else if (truetotal = 15) {
+        textrusult = "Ez mid GG,WP"
+    }
+    totaltext.textContent = 'Ваш результат: ' + truetotal + '/15' + " " + textrusult; // ну и показываем результат, и сколько правильных из скольки
+    }
+
+
+    buttonform.addEventListener('click', (e) => {
+        result();
+    });
+});
+
+// Сейчас будем находить вопросы и ответы, и закреплять их в переменные чтобы потом использовать
+// Сначала сделаем всё для Героев чтобы потом использовать эту формочку для других тестов
+// var questionfirsthero = document.querySelector('.');
+var testform = document.querySelector('.test'); // найдём сам тест опросник
+buttonhero.addEventListener('click', (e) => {
+    testform.style.display ='block';
+});
+
+buttonitem.addEventListener('click', (e) => {
+    testform.style.display ='block';
+});
+
+buttonskill.addEventListener('click', (e) => {
+    testform.style.display ='block';
+});
+
+buttoncrip.addEventListener('click', (e) => {
+    testform.style.display ='block';
+});
+
+var buttonexit = document.querySelector('.button__exit');
+
+buttonexit.addEventListener('click', (e) => {
+    testform.style.display ='none';
+    location.reload();
+});
+
+
+
+</script>
+
+    </div>
+    </div>
+</section>
+<footer class="footer">
+        <p class="text">Расширьте границы знаний с нашими тестами!</p>
+</footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

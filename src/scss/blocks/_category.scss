@@ -1,14 +1,18 @@
 .section__category {
-    padding-top: 25px;
+    padding-top: 1%;
     color: #fff;
+    height: $categoryheight;
     // background: $background;
     .container {
         width: 100%;
         .category__main {
             padding-bottom: 25px;
-            .carts {
-                margin-top: 50px;
+            // height: 100%;    
+            width: 100%;
+            .carts {    
+                margin-top: 3%;
                 display: flex;
+                justify-content: space-between;
                 .hero {
                     display: block;
                 }
@@ -25,9 +29,8 @@
                     display: none;
                 }
                 .cart {
-                    margin-right: 50px;
                     width: 250px;
-                    height: 175px;
+                    height: 150px;
                     border: #fff 1px solid;
                     .cart__header {
                         height: 45%;
@@ -64,18 +67,23 @@
                             padding-top: 10px;
                         }
                         .button {
-                            margin-top: 10px;
+                            margin-top: 3%;
                             position: absolute;
                             left: 50%;
                             transform: translateX(-50%);
                             font-size: 20px;
                             width: 75%;
                             color: #fff;
-                            height: 40%;
+                            padding-top: 3px;
+                            padding-bottom: 6px;
                             border-radius: 25px;
                             cursor: pointer;
                             border: #fff 1px solid;
                             background: $cart__button;
+                            &:hover {
+                                opacity: .7;
+                                transition: .3s;
+                            }
                         }
                     }
                 }
@@ -101,6 +109,11 @@
                     border-radius: 5%;
                     color: #fff;
                     cursor: pointer;
+                    border: #fff 1px solid;
+                    &:hover {
+                        background: #4d15eb;
+                        transition: .3s;
+                    }
                 }
                 .list {
                     background-color: $dropdown__button;
@@ -111,17 +124,34 @@
                     z-index: 100;
                     .list__item {
                         padding: 5px;
-                        border: 1px #fff solid;
+                        border: .5px #fff solid;
+                        &:hover {
+                            background: #825ced;
+                            transition: .3s;
+                        }
                         .link {
                             text-align: center;
-                            font-size: 18px;
+                            font-size: 16px;
                             text-decoration: none;
                             color: #fff;
                             cursor: pointer;
+                            
                         }
                     }
                 }
             }
         }
     }
+}
+
+.cartrow1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.cartrow2 {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
